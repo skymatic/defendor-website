@@ -1,0 +1,12 @@
+<header class="mb-auto">
+  <a class="masthead-brand">{{ site.title }}</a>
+  <nav class="nav nav-masthead justify-content-center">
+{% for item in site.data.menu %}
+  {% if page.url == item.url %}
+    <a class="nav-link active" href="{{ item.url }}">{{ item.text }} <span class="sr-only">(current)</span></a>
+  {% else %}
+    <a class="nav-link" href="{{ item.url }}">{{ item.text }}</a>
+  {% endif %}
+{% endfor %}
+  </nav>
+</header>

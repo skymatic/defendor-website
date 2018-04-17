@@ -1,0 +1,6 @@
+# Site settings
+title: Defendor
+
+# Build settings
+sass:
+  style: compressed

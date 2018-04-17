@@ -1,0 +1,89 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+@import "custom";
+
+/*
+ * Globals
+ */
+
+a,
+a:focus,
+a:hover {
+  color: $white;
+}
+
+.btn-lg {
+  font-weight: $font-weight-bold;
+  padding: .75rem 1.25rem;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: $white;
+  color: $dark;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  border: .05rem solid $white;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: $dark;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: $white;
+  text-shadow: 0 .05rem .1rem rgba($black, .5);
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+/*
+ * Header
+ */
+
+.masthead-brand {
+  font-size: $h3-font-size;
+}
+
+.nav-masthead .nav-link {
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+  color: rgba($white, .5);
+  font-weight: $font-weight-bold;
+  padding: .25rem 0;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba($white, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  border-bottom-color: $white;
+  color: $white;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
