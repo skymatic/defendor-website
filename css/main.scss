@@ -22,10 +22,26 @@ a:hover {
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: $white;
-  color: $dark;
+  background-color: $primary;
+  color: $white;
+  letter-spacing: 1.2px;
   text-shadow: none; /* Prevent inheritance from `body` */
-  border: .05rem solid $white;
+  text-transform: uppercase;
+  border: .05rem solid $primary;
+}
+
+.btn-primary:hover {
+  box-shadow: $box-shadow;
+  transform: translate(0, -1px);
+  transition: .2s ease-in-out;
+}
+
+.vh-100 {
+  min-height: calc(100vh - 150px);
+
+  @include media-breakpoint-up(md) {
+    min-height: calc(100vh - 114px);
+  }
 }
 
 /*
@@ -45,16 +61,16 @@ body {
   text-shadow: 0 .05rem .1rem rgba($black, .5);
 }
 
-.cover-container {
-  max-width: 42em;
-}
-
 /*
  * Header
  */
 
 .masthead-brand {
   font-size: $h3-font-size;
+
+  @include hover {
+    text-decoration: $link-decoration;
+  }
 }
 
 .nav-masthead .nav-link {
@@ -79,7 +95,7 @@ body {
   color: $white;
 }
 
-@media (min-width: 48em) {
+@include media-breakpoint-up(md) {
   .masthead-brand {
     float: left;
   }
