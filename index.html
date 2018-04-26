@@ -45,4 +45,45 @@ layout: default
       </div>
     </div>
   </section>
+
+  <section>
+    <div class="container">
+      <!-- Sorry, dass das hier so scheiße aussieht. Aber es funzt! :D -->
+      <form id="request-demo-form" action="#">
+        <div class="form-group">
+          <label for="subscriber_mail">Email address</label>
+          <input type="email" id="subscriber_mail" class="form-control" placeholder="Enter email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Request Demo</button>
+        <p>
+          <small>By pressing &quot;Request Demo&quot; you agree that the data entered above is stored on our servers and you get contacted by us.</small>
+        </p>
+      </form>
+    </div>
+    <script type="text/javascript">
+    // <![CDATA[
+      (function() {
+        'use strict';
+        document.getElementById('request-demo-form').addEventListener('submit', function(evt) {
+          var subscriberMail = document.getElementById('subscriber_mail').value;
+          var xhr = new XMLHttpRequest();
+          xhr.addEventListener("load", function(e) {
+            if(xhr.readyState === 4 && xhr.status === 200) {
+              console.log('Subscribed successfully.');
+              document.getElementById('subscriber_mail').value = '';
+            } else {
+              console.log('Subscribe failed.', xhr.status, xhr.responseText);
+            }
+          });
+          xhr.open('POST', 'https://api.skymatic.de/defendor/demo-signup.php');
+          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          xhr.send('subscriber_mail=' + subscriberMail);
+          evt.preventDefault();
+          evt.stopPropagation();
+        });
+      })();
+    // ]]>
+    </script>
+  </section>
+
 </main>
