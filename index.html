@@ -8,7 +8,17 @@ layout: default
         <div class="col-md-6 py-3">
           <h1>Security-first workspaces</h1>
           <p class="lead">Defendor is a self-hosted file share platform for teams and businesses. Access your confidential files and collaborate across your devices.</p>
-          <p><a href="mailto:defendor@skymatic.de" class="btn btn-lg btn-secondary text-uppercase">Request a demo</a></p>
+          <form id="request-demo-form">
+            <div class="form-group">
+              <input type="email" id="request-demo-email" class="form-control form-control-lg" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary btn-lg btn-block text-uppercase" aria-describedby="request-demo-consent">Request Demo</button>
+              <small id="request-demo-consent" class="form-text text-muted">By pressing &quot;Request Demo&quot;, you agree that the data entered above is stored on our servers and you get contacted by us.</small>
+            </div>
+          </form>
+          <p id="request-demo-success" class="d-none">Thank you for requesting a demo! :rocket: You will hear from us soon.</p>
+          <p id="request-demo-error" class="text-danger d-none">Unable to request demo.</p>
         </div>
         <div class="d-none d-md-block col-md-6 py-3">
           <img class="img-fluid mb-3 p-3" src="{{site.baseurl}}/assets/home.png" srcset="{{site.baseurl}}/assets/home@2x.png 2x" />
@@ -45,45 +55,33 @@ layout: default
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="container">
-      <!-- Sorry, dass das hier so scheiße aussieht. Aber es funzt! :D -->
-      <form id="request-demo-form" action="#">
-        <div class="form-group">
-          <label for="subscriber_mail">Email address</label>
-          <input type="email" id="subscriber_mail" class="form-control" placeholder="Enter email" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Request Demo</button>
-        <p>
-          <small>By pressing &quot;Request Demo&quot; you agree that the data entered above is stored on our servers and you get contacted by us.</small>
-        </p>
-      </form>
-    </div>
-    <script type="text/javascript">
-    // <![CDATA[
-      (function() {
-        'use strict';
-        document.getElementById('request-demo-form').addEventListener('submit', function(evt) {
-          var subscriberMail = document.getElementById('subscriber_mail').value;
-          var xhr = new XMLHttpRequest();
-          xhr.addEventListener("load", function(e) {
-            if(xhr.readyState === 4 && xhr.status === 200) {
-              console.log('Subscribed successfully.');
-              document.getElementById('subscriber_mail').value = '';
-            } else {
-              console.log('Subscribe failed.', xhr.status, xhr.responseText);
-            }
-          });
-          xhr.open('POST', 'https://api.skymatic.de/defendor/demo-signup.php');
-          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-          xhr.send('subscriber_mail=' + subscriberMail);
-          evt.preventDefault();
-          evt.stopPropagation();
-        });
-      })();
-    // ]]>
-    </script>
-  </section>
-
 </main>
+
+<script type="text/javascript">
+// <![CDATA[
+  (function() {
+    'use strict';
+    document.getElementById('request-demo-form').addEventListener('submit', function(evt) {
+      var email = document.getElementById('request-demo-email').value;
+      var xhr = new XMLHttpRequest();
+      xhr.addEventListener("load", function(e) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log('Successfully requested demo.');
+          document.getElementById('request-demo-form').classList.add("d-none");
+          document.getElementById('request-demo-email').value = '';
+          document.getElementById('request-demo-success').classList.remove("d-none");
+          document.getElementById('request-demo-error').classList.add("d-none");
+        } else {
+          console.log('Failed to request demo.', xhr.status, xhr.responseText);
+          document.getElementById('request-demo-error').classList.remove("d-none");
+        }
+      });
+      xhr.open('POST', 'https://api.skymatic.de/defendor/demo-signup.php');
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send('email=' + email);
+      evt.preventDefault();
+      evt.stopPropagation();
+    });
+  })();
+// ]]>
+</script>

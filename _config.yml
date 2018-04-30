@@ -1,6 +1,10 @@
 # Site settings
 title: Defendor
 
+# Plugins
+plugins:
+  - jemoji
+
 # Build settings
 sass:
   style: compressed
