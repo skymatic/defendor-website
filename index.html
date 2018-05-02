@@ -132,32 +132,3 @@ layout: default
     </div>
   </section>
 </main>
-
-<script type="text/javascript">
-// <![CDATA[
-  (function() {
-    'use strict';
-    document.getElementById('request-demo-form').addEventListener('submit', function(evt) {
-      var email = document.getElementById('request-demo-email').value;
-      var xhr = new XMLHttpRequest();
-      xhr.addEventListener("load", function(e) {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log('Successfully requested demo.');
-          document.getElementById('request-demo-form').classList.add("d-none");
-          document.getElementById('request-demo-email').value = '';
-          document.getElementById('request-demo-success').classList.remove("d-none");
-          document.getElementById('request-demo-error').classList.add("d-none");
-        } else {
-          console.log('Failed to request demo.', xhr.status, xhr.responseText);
-          document.getElementById('request-demo-error').classList.remove("d-none");
-        }
-      });
-      xhr.open('POST', 'https://api.skymatic.de/defendor/demo-signup.php');
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send('email=' + email);
-      evt.preventDefault();
-      evt.stopPropagation();
-    });
-  })();
-// ]]>
-</script>

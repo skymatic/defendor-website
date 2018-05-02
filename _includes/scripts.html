@@ -1,3 +1,31 @@
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script type="text/javascript">
+// <![CDATA[
+  (function() {
+    'use strict';
+    $('#request-demo-form').submit(function(event) {
+      var email = $('#request-demo-email').val();
+      $.ajax({
+        method: 'POST',
+        url: 'https://api.skymatic.de/defendor/demo-signup.php',
+        data: { email: email }
+      })
+      .done(function() {
+          console.log('Successfully requested demo.');
+          $('#request-demo-form').addClass('d-none');
+          $('#request-demo-email').val('');
+          $('#request-demo-success').removeClass('d-none');
+          $('#request-demo-error').addClass('d-none');
+      })
+      .fail(function(jqXHR, textStatus, errorThrown) {
+          console.log('Failed to request demo.', textStatus, errorThrown);
+          $('#request-demo-error').removeClass('d-none');
+      });
+      event.preventDefault();
+      event.stopPropagation();
+    });
+  })();
+// ]]>
+</script>
