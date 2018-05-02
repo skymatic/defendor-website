@@ -40,6 +40,10 @@
   transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
 }
 
+.card-border-top {
+  border-top: $border-radius solid $primary;
+}
+
 .card-title {
   font-weight: 600;
 }
@@ -49,10 +53,10 @@
 }
 
 .vh-100 {
-  min-height: calc(100vh - 166px);
+  min-height: calc(100vh - 182px);
 
   @include media-breakpoint-up(md) {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 146px);
   }
 }
 
