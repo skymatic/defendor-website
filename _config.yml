@@ -8,3 +8,7 @@ plugins:
 # Build settings
 sass:
   style: compressed
+
+# Emoji
+emoji:
+  src: "/img"
