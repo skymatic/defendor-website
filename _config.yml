@@ -1,5 +1,7 @@
 # Site settings
 title: Defendor
+description: >
+  Defendor adds security features, such as anti-malware filters, file encryption, file versioning, and backups, to your corporate cloud- or network-based file storages.
 
 # Plugins
 plugins:
@@ -8,7 +10,5 @@ plugins:
 # Build settings
 sass:
   style: compressed
-
-# Emoji
 emoji:
-  src: "/img"
+  src: "/assets"
