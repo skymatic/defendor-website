@@ -53,10 +53,10 @@
 }
 
 .vh-100 {
-  min-height: calc(100vh - 182px);
+  min-height: calc(100vh - 282px);
 
   @include media-breakpoint-up(md) {
-    min-height: calc(100vh - 146px);
+    min-height: calc(100vh - 246px);
   }
 }
 

@@ -1,7 +1,7 @@
 # Site settings
 title: Defendor
 description: >
-  Defendor adds security features, such as anti-malware filters, file encryption, file versioning, and backups, to your corporate cloud- or network-based file storages.
+  Defendor is the new heart of your IT infrastructure. The platform stores your company files and makes them available via network drives. Data is securely protected against ransomware, viruses, data theft, unauthorized access, and data loss.
 
 # Plugins
 plugins:

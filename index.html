@@ -1,24 +1,25 @@
 ---
 layout: default
+permalink: /
 ---
 <main role="main">
   <section class="section-dark text-center text-md-left">
     <div class="container d-flex py-5 vh-100">
       <div class="row align-items-center">
         <div class="col-md-6 py-3">
-          <h1>Secure workspaces for your network drives</h1>
-          <p class="lead">Defendor adds security features, such as anti-malware filters, file encryption, file versioning, and backups, to your corporate cloud- or network-based file storages.</p>
-          <form id="request-demo-form">
+          <h1>Hochsicherheit für Ihre Unternehmensdateien</h1>
+          <p class="lead">Defendor ist das neue Herz Ihrer IT-Infrastruktur. Die Plattform speichert Ihre Unternehmensdateien und stellt sie über Netzlaufwerke bereit. Vor Ransomware, Viren, Datendiebstahl, nicht autorisiertem Zugriff und Datenverlust werden die Daten sicher geschützt.</p>
+          <form id="request-demo-form" action="https://api.skymatic.de/defendor/demo-signup.php">
             <div class="form-group">
-              <input type="email" id="request-demo-email" class="form-control form-control-lg" placeholder="Enter email" required>
+              <input type="email" id="request-demo-email" class="form-control form-control-lg" placeholder="Ihre E-Mail-Adresse" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-secondary btn-lg btn-block text-uppercase" aria-describedby="request-demo-consent">Request Demo</button>
-              <small id="request-demo-consent" class="form-text text-muted">By pressing &quot;Request Demo&quot;, you agree that the data entered above is stored on our servers and you get contacted by us.</small>
+              <button type="submit" class="btn btn-secondary btn-lg btn-block text-uppercase" aria-describedby="request-demo-consent">Demo anfordern</button>
+              <small id="request-demo-consent" class="form-text text-muted">Mit dem Klick von &quot;Demo anfordern&quot; erklären Sie sich damit einverstanden, dass die oben eingegebenen Daten auf unseren Servern gespeichert werden und Sie von uns kontaktiert werden.</small>
             </div>
           </form>
-          <p id="request-demo-success" class="d-none">Thank you for requesting a demo! :rocket: You will hear from us soon.</p>
-          <p id="request-demo-error" class="text-danger d-none">Unable to request demo.</p>
+          <p id="request-demo-success" class="d-none">Vielen Dank für Ihr Interesse! :rocket: Wir melden uns bei Ihnen sobald wie möglich.</p>
+          <p id="request-demo-error" class="text-danger d-none">Beim Anfordern der Demo ist ein Fehler aufgetreten.</p>
         </div>
         <div class="col-md-6 py-3 d-none d-md-flex justify-content-center align-items-center">
           <img class="img-fluid mb-3" src="{{site.baseurl}}/assets/home.png" srcset="{{site.baseurl}}/assets/home@2x.png 2x" />
@@ -29,17 +30,17 @@ layout: default
 
   <section>
     <div class="container d-flex flex-column justify-content-center align-items-stretch py-5 vh-100">
-      <h2 class="text-center text-uppercase mb-4">Made by <a href="https://skymatic.de" target="_blank">Skymatic</a>, the makers of <a href="https://cryptomator.org" target="_blank">Cryptomator</a></h2>
+      <h2 class="text-center text-uppercase mb-4">Von <a href="https://skymatic.de" target="_blank">Skymatic</a>, den Machern von <a href="https://cryptomator.org" target="_blank">Cryptomator</a></h2>
       <img class="img-fluid mb-4" src="{{site.baseurl}}/assets/document-flow.png" srcset="{{site.baseurl}}/assets/document-flow@2x.png 2x" />
       <div class="row">
         <div class="col-md-3">
           <div class="nav flex-column nav-pills mb-3" id="features-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="features-user-management-tab" data-toggle="pill" href="#features-user-management" role="tab" aria-controls="features-user-management" aria-selected="true">&#9312; User Management</a>
-            <a class="nav-link" id="features-ransomware-protection-tab" data-toggle="pill" href="#features-ransomware-protection" role="tab" aria-controls="features-ransomware-protection" aria-selected="false">&#9313; Ransomware Protection</a>
-            <a class="nav-link" id="features-antivirus-scanning-tab" data-toggle="pill" href="#features-antivirus-scanning" role="tab" aria-controls="features-antivirus-scanning" aria-selected="false">&#9314; Antivirus Scanning</a>
-            <a class="nav-link" id="features-encryption-tab" data-toggle="pill" href="#features-encryption" role="tab" aria-controls="features-encryption" aria-selected="false">&#9315; Encryption</a>
-            <a class="nav-link" id="features-cloud-backup-tab" data-toggle="pill" href="#features-cloud-backup" role="tab" aria-controls="features-cloud-backup" aria-selected="false">&#9316; Cloud Backup</a>
-            <a class="nav-link" id="features-more-tab" data-toggle="pill" href="#features-more" role="tab" aria-controls="features-more" aria-selected="false">And more…</a>
+            <a class="nav-link active" id="features-user-management-tab" data-toggle="pill" href="#features-user-management" role="tab" aria-controls="features-user-management" aria-selected="true">&#9312; Benutzerverwaltung</a>
+            <a class="nav-link" id="features-ransomware-protection-tab" data-toggle="pill" href="#features-ransomware-protection" role="tab" aria-controls="features-ransomware-protection" aria-selected="false">&#9313; Ransomware-Schutz</a>
+            <a class="nav-link" id="features-antivirus-scanning-tab" data-toggle="pill" href="#features-antivirus-scanning" role="tab" aria-controls="features-antivirus-scanning" aria-selected="false">&#9314; Antiviren-Scan</a>
+            <a class="nav-link" id="features-encryption-tab" data-toggle="pill" href="#features-encryption" role="tab" aria-controls="features-encryption" aria-selected="false">&#9315; Verschlüsselung</a>
+            <a class="nav-link" id="features-cloud-backup-tab" data-toggle="pill" href="#features-cloud-backup" role="tab" aria-controls="features-cloud-backup" aria-selected="false">&#9316; Cloud-Backup</a>
+            <a class="nav-link" id="features-more-tab" data-toggle="pill" href="#features-more" role="tab" aria-controls="features-more" aria-selected="false">Und mehr…</a>
           </div>
         </div>
         <div class="col-md-9">
@@ -47,53 +48,54 @@ layout: default
             <div class="tab-pane fade show active" id="features-user-management" role="tabpanel" aria-labelledby="features-user-management-tab">
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
-                  <h3 class="card-title">User Management</h3>
-                  <p class="card-text">Use fine-grained user rights and access management with temporary or read-only access to specific workspaces. Connect to your existing Active Directory or LDAP server to import users and groups.</p>
+                  <h3 class="card-title">Benutzerverwaltung</h3>
+                  <p class="card-text">Feingranulares Rechte- und Zugriffsmanagement, über das auch temporäre und schreibgeschützte Zugriffe eingerichtet werden können. Nutzer und Gruppen können auch direkt von Ihrem Active-Directory oder LDAP-Server importiert werden.</p>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="features-ransomware-protection" role="tabpanel" aria-labelledby="features-ransomware-protection-tab">
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
-                  <h3 class="card-title">Ransomware Protection</h3>
-                  <p class="card-text">Intelligent self-learning, self-improving ransomware detection using state-of-the-art entropy sampling. Because static file signature and file extension filters aren‘t enough to prevent yet unknown ransomwares.</p>
+                  <h3 class="card-title">Ransomware-Schutz</h3>
+                  <p class="card-text">Intelligentes und selbstlernende Ransomware-Erkennung durch modernste Entropieanalysen. Dieser Schutz ist Filtern, die nach bestimmten Dateisignaturen und
+-erweiterungen suchen deutlich überlegen.</p>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="features-antivirus-scanning" role="tabpanel" aria-labelledby="features-antivirus-scanning-tab">
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
-                  <h3 class="card-title">Antivirus Scanning</h3>
-                  <p class="card-text">Each file will be scanned for viruses while in transit before it even reaches your network storage. Prevent spreading malware either with built-in ClamAV or by connecting your existing AV software.</p>
+                  <h3 class="card-title">Antiviren-Scan</h3>
+                  <p class="card-text">Dateien werden automatisch auf Viren gescannt, bevor sie in Ihrem Dateispeicher abgelegt werden. Malware wird effektiv an ihrer Verbreitung gehindert – durch ClamAV oder wahlweise durch einfache Einbindung Ihres existierenden Virenscanners.</p>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="features-encryption" role="tabpanel" aria-labelledby="features-encryption-tab">
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
-                  <h3 class="card-title">Encryption</h3>
-                  <p class="card-text">Employ 256 bit per-file keys for AES-GCM file content, file metadata encryption and file signatures. Based on award-winning Cryptomator technology and augmented by enterprise recovery keys and time-restricted sharing options.</p>
+                  <h3 class="card-title">Verschlüsselung</h3>
+                  <p class="card-text">Dateien werden zum Schutz vor unberechtigtem Zugriff mit AES-GCM (256 Bit) verschlüsselt. Die Verschlüsselung basiert auf der preisgekrönten Cryptomator-Technologie, erweitert um Recovery-Keys und Funktionen zum Teilen von Dateien.</p>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="features-cloud-backup" role="tabpanel" aria-labelledby="features-cloud-backup-tab">
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
-                  <h3 class="card-title">Cloud Backup</h3>
-                  <p class="card-text">Schedule regular backups of the already encrypted files to highly redundant cloud storage servers or restore old versions from the history of individual files.</p>
+                  <h3 class="card-title">Cloud-Backup</h3>
+                  <p class="card-text">Die verschlüsselten Dateien werden automatisch regelmäßig mit einer (hoch geo-redundanten) Cloud synchronisiert. So können Ihre Dateien sowie auch ältere Dateiversionen jederzeit wiederhergestellt werden.</p>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="features-more" role="tabpanel" aria-labelledby="features-more-tab">
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
-                  <h3 class="card-title">And more…</h3>
+                  <h3 class="card-title">Und mehr…</h3>
                   <ul class="card-text">
-                    <li>Full audit logs</li>
-                    <li>AI-based account suspension on suspicious activities</li>
-                    <li>Enables GDPR compliance for your cloud storage</li>
-                    <li>Enterprise support</li>
-                    <li>Customization options</li>
+                    <li>Vollständige Audit-Logs</li>
+                    <li>Auf KI basierende automatische Account-Sperre bei verdächtigen Aktivitäten</li>
+                    <li>DSGVO-Compliance</li>
+                    <li>Enterprise-Support</li>
+                    <li>Kundenspezifische Anpassungsmöglichkeiten</li>
                   </ul>
                 </div>
               </div>

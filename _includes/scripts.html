@@ -1,30 +1,3 @@
-<script src="/js/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="/js/bootstrap.min.js" integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-// <![CDATA[
-  (function() {
-    'use strict';
-    $('#request-demo-form').submit(function(event) {
-      var email = $('#request-demo-email').val();
-      $.ajax({
-        method: 'POST',
-        url: 'https://api.skymatic.de/defendor/demo-signup.php',
-        data: { email: email }
-      })
-      .done(function() {
-          console.log('Successfully requested demo.');
-          $('#request-demo-form').addClass('d-none');
-          $('#request-demo-email').val('');
-          $('#request-demo-success').removeClass('d-none');
-          $('#request-demo-error').addClass('d-none');
-      })
-      .fail(function(jqXHR, textStatus, errorThrown) {
-          console.log('Failed to request demo.', textStatus, errorThrown);
-          $('#request-demo-error').removeClass('d-none');
-      });
-      event.preventDefault();
-      event.stopPropagation();
-    });
-  })();
-// ]]>
-</script>
+<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/app.js' | prepend: site.baseurl }}"></script>

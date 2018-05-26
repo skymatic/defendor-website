@@ -1,0 +1,107 @@
+---
+layout: en/default
+permalink: /en/
+---
+<main role="main">
+  <section class="section-dark text-center text-md-left">
+    <div class="container d-flex py-5 vh-100">
+      <div class="row align-items-center">
+        <div class="col-md-6 py-3">
+          <h1>High-Level Security for Your Organization's Data</h1>
+          <p class="lead">Defendor is the new heart of your IT infrastructure. The platform stores your company files and makes them available via network drives. Data is securely protected against ransomware, viruses, data theft, unauthorized access, and data loss.</p>
+          <form id="request-demo-form" action="https://api.skymatic.de/defendor/demo-signup.php">
+            <div class="form-group">
+              <input type="email" id="request-demo-email" class="form-control form-control-lg" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary btn-lg btn-block text-uppercase" aria-describedby="request-demo-consent">Request Demo</button>
+              <small id="request-demo-consent" class="form-text text-muted">By pressing &quot;Request Demo&quot;, you agree that the data entered above is stored on our servers and you get contacted by us.</small>
+            </div>
+          </form>
+          <p id="request-demo-success" class="d-none">Thank you for requesting a demo! :rocket: You will hear from us soon.</p>
+          <p id="request-demo-error" class="text-danger d-none">An error has occurred while requesting demo.</p>
+        </div>
+        <div class="col-md-6 py-3 d-none d-md-flex justify-content-center align-items-center">
+          <img class="img-fluid mb-3" src="{{site.baseurl}}/assets/home.png" srcset="{{site.baseurl}}/assets/home@2x.png 2x" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container d-flex flex-column justify-content-center align-items-stretch py-5 vh-100">
+      <h2 class="text-center text-uppercase mb-4">Made by <a href="https://skymatic.de" target="_blank">Skymatic</a>, the makers of <a href="https://cryptomator.org" target="_blank">Cryptomator</a></h2>
+      <img class="img-fluid mb-4" src="{{site.baseurl}}/assets/document-flow.png" srcset="{{site.baseurl}}/assets/document-flow@2x.png 2x" />
+      <div class="row">
+        <div class="col-md-3">
+          <div class="nav flex-column nav-pills mb-3" id="features-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="features-user-management-tab" data-toggle="pill" href="#features-user-management" role="tab" aria-controls="features-user-management" aria-selected="true">&#9312; User Management</a>
+            <a class="nav-link" id="features-ransomware-protection-tab" data-toggle="pill" href="#features-ransomware-protection" role="tab" aria-controls="features-ransomware-protection" aria-selected="false">&#9313; Ransomware Protection</a>
+            <a class="nav-link" id="features-antivirus-scanning-tab" data-toggle="pill" href="#features-antivirus-scanning" role="tab" aria-controls="features-antivirus-scanning" aria-selected="false">&#9314; Antivirus Scanning</a>
+            <a class="nav-link" id="features-encryption-tab" data-toggle="pill" href="#features-encryption" role="tab" aria-controls="features-encryption" aria-selected="false">&#9315; Encryption</a>
+            <a class="nav-link" id="features-cloud-backup-tab" data-toggle="pill" href="#features-cloud-backup" role="tab" aria-controls="features-cloud-backup" aria-selected="false">&#9316; Cloud Backup</a>
+            <a class="nav-link" id="features-more-tab" data-toggle="pill" href="#features-more" role="tab" aria-controls="features-more" aria-selected="false">And more…</a>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="features-user-management" role="tabpanel" aria-labelledby="features-user-management-tab">
+              <div class="card card-border-top shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title">User Management</h3>
+                  <p class="card-text">Use fine-grained user rights and access management with temporary or read-only access to specific workspaces. Connect to your existing Active Directory or LDAP server to import users and groups.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="features-ransomware-protection" role="tabpanel" aria-labelledby="features-ransomware-protection-tab">
+              <div class="card card-border-top shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title">Ransomware Protection</h3>
+                  <p class="card-text">Intelligent self-learning, self-improving ransomware detection using state-of-the-art entropy sampling. Because static file signature and file extension filters aren‘t enough to prevent yet unknown ransomwares.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="features-antivirus-scanning" role="tabpanel" aria-labelledby="features-antivirus-scanning-tab">
+              <div class="card card-border-top shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title">Antivirus Scanning</h3>
+                  <p class="card-text">Each file will be scanned for viruses while in transit before it even reaches your network storage. Prevent spreading malware either with built-in ClamAV or by connecting your existing AV software.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="features-encryption" role="tabpanel" aria-labelledby="features-encryption-tab">
+              <div class="card card-border-top shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title">Encryption</h3>
+                  <p class="card-text">Employ 256 bit per-file keys for AES-GCM file content, file metadata encryption and file signatures. Based on award-winning Cryptomator technology and augmented by enterprise recovery keys and time-restricted sharing options.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="features-cloud-backup" role="tabpanel" aria-labelledby="features-cloud-backup-tab">
+              <div class="card card-border-top shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title">Cloud Backup</h3>
+                  <p class="card-text">Schedule regular backups of the already encrypted files to highly redundant cloud storage servers or restore old versions from the history of individual files.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="features-more" role="tabpanel" aria-labelledby="features-more-tab">
+              <div class="card card-border-top shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title">And more…</h3>
+                  <ul class="card-text">
+                    <li>Full audit logs</li>
+                    <li>AI-based account suspension on suspicious activities</li>
+                    <li>GDPR compliance</li>
+                    <li>Enterprise support</li>
+                    <li>Customization options</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
