@@ -3,25 +3,15 @@ layout: en/default
 permalink: /en/
 ---
 <main role="main">
-  <section class="section-dark text-center text-md-left">
+  <section class="section-dark text-center text-lg-left">
     <div class="container d-flex py-5 vh-100">
       <div class="row align-items-center">
-        <div class="col-md-6 py-3">
+        <div class="col-lg-6 py-3">
           <h1>High-Level Security for Your Organization's Data</h1>
           <p class="lead">Defendor is the new heart of your IT infrastructure. The platform stores your company files and makes them available via network drives. Data is securely protected against ransomware, viruses, data theft, unauthorized access, and data loss.</p>
-          <form id="request-demo-form" action="https://api.skymatic.de/defendor/demo-signup.php">
-            <div class="form-group">
-              <input type="email" id="request-demo-email" class="form-control form-control-lg" placeholder="Enter email" required>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-secondary btn-lg btn-block text-uppercase" aria-describedby="request-demo-consent">Request Demo</button>
-              <small id="request-demo-consent" class="form-text text-muted">By pressing &quot;Request Demo&quot;, you agree that the data entered above is stored on our servers and you get contacted by us.</small>
-            </div>
-          </form>
-          <p id="request-demo-success" class="d-none">Thank you for requesting a demo! :rocket: You will hear from us soon.</p>
-          <p id="request-demo-error" class="text-danger d-none">An error has occurred while requesting demo.</p>
+          <a class="btn btn-secondary btn-lg text-uppercase" href="#request-demo">Request Demo</a>
         </div>
-        <div class="col-md-6 py-3 d-none d-md-flex justify-content-center align-items-center">
+        <div class="col-lg-6 py-3 d-none d-lg-flex justify-content-center align-items-center">
           <img class="img-fluid mb-3" src="{{site.baseurl}}/assets/home.png" srcset="{{site.baseurl}}/assets/home@2x.png 2x" />
         </div>
       </div>
@@ -33,7 +23,7 @@ permalink: /en/
       <h2 class="text-center text-uppercase mb-4">Made by <a href="https://skymatic.de" target="_blank">Skymatic</a>, the makers of <a href="https://cryptomator.org" target="_blank">Cryptomator</a></h2>
       <img class="img-fluid mb-4" src="{{site.baseurl}}/assets/document-flow.png" srcset="{{site.baseurl}}/assets/document-flow@2x.png 2x" />
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-3">
           <div class="nav flex-column nav-pills mb-3" id="features-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link active" id="features-user-management-tab" data-toggle="pill" href="#features-user-management" role="tab" aria-controls="features-user-management" aria-selected="true">&#9312; User Management</a>
             <a class="nav-link" id="features-ransomware-protection-tab" data-toggle="pill" href="#features-ransomware-protection" role="tab" aria-controls="features-ransomware-protection" aria-selected="false">&#9313; Ransomware Protection</a>
@@ -43,7 +33,7 @@ permalink: /en/
             <a class="nav-link" id="features-more-tab" data-toggle="pill" href="#features-more" role="tab" aria-controls="features-more" aria-selected="false">And more…</a>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-lg-9">
           <div class="tab-content">
             <div class="tab-pane fade show active" id="features-user-management" role="tabpanel" aria-labelledby="features-user-management-tab">
               <div class="card card-border-top shadow-sm">
@@ -101,6 +91,56 @@ permalink: /en/
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="request-demo">
+    <div class="container py-5 vh-100">
+      <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h2 class="text-center text-uppercase mb-4">Request Demo</h2>
+        <form id="request-demo-form" action="https://api.skymatic.de/defendor/demo-signup.php">
+          <div class="form-group">
+            <label for="request-demo-name">Name</label>
+            <input type="text" class="form-control" id="request-demo-name" required>
+          </div>
+          <div class="form-group">
+            <label for="request-demo-email">Email Address</label>
+            <input type="email" class="form-control" id="request-demo-email" required>
+          </div>
+          <div class="form-group">
+            <label for="request-demo-company">Company</label>
+            <input type="text" class="form-control" id="request-demo-company" required>
+          </div>
+          <div class="form-group">
+            <label for="request-demo-employees">Number of Employees</label>
+            <select class="form-control" id="request-demo-employees" required>
+              <option value="self-employed">Self-employed</option>
+              <option value="1-10" selected>1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="201-500">201-500</option>
+              <option value="501-1000">501-1000</option>
+              <option value="1001-5000">1001-5000</option>
+              <option value="5001-10000">5001-10,000</option>
+              <option value="10001+">10,001+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="request-demo-usecase">How would you like to use Defendor in your company?</label>
+            <textarea class="form-control" id="request-demo-usecase" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <small id="request-demo-consent" class="form-text text-muted">By pressing &quot;Request Demo&quot;, you agree that the data entered above is stored on our servers and you get contacted by us.</small>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-secondary btn-lg text-uppercase" aria-describedby="request-demo-consent">Request Demo</button>
+          </div>
+        </form>
+        <p id="request-demo-success" class="text-center d-none">Thank you for your interest in Defendor! :rocket: You will hear from us soon.</p>
+        <p id="request-demo-error" class="text-danger d-none">An error has occurred while requesting demo.</p>
+      </div>
       </div>
     </div>
   </section>

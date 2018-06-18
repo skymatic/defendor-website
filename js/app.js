@@ -5,10 +5,14 @@ $('#request-demo-form').submit(function(event) {
   var submitButton = $form.find('button[type=submit]');
   submitButton.prop('disabled', true);
 
-  var email = $('#request-demo-email').val();
-
   var url = $form.attr('action');
-  $.post(url, { email: email })
+  $.post(url, {
+    name: $('#request-demo-name').val(),
+    email: $('#request-demo-email').val(),
+    company: $('#request-demo-company').val(),
+    employees: $('#request-demo-employees').val(),
+    usecase: '```markdown\n' + $('#request-demo-usecase').val() + '\n```'
+  })
   .done(function() {
     $form.addClass('d-none');
     $('#request-demo-success').removeClass('d-none');
