@@ -1,7 +1,7 @@
 # Site settings
-title: Defendor
+title: Cryptomator Server
 description: >
-  Defendor is the new heart of your IT infrastructure. The platform stores your company files and makes them available via network drives. Data is securely protected against ransomware, viruses, data theft, unauthorized access, and data loss.
+  Cryptomator Server is the new heart of your IT infrastructure. The platform stores your company files and makes them available via network drives. Data is securely protected against ransomware, viruses, data theft, unauthorized access, and data loss.
 
 # Plugins
 plugins:
