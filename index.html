@@ -18,8 +18,20 @@ permalink: /
     </div>
   </section>
 
+  <section class="text-center">
+    <div class="container d-flex flex-column justify-content-center align-items-stretch py-5">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h2 class="text-uppercase mb-4">Umfrage zur Datensicherheit in KMU</h2>
+          <p>KMU in Deutschland machen häufig nur geringfügig von IT-Sicherheitsmaßnahmen Gebrauch, so dass sensible Unternehmensdaten oft nicht hinreichend gegen Datendiebstahl oder Datenverlust geschützt sind. Um die aktuellen Schutzbedürfnisse der Unternehmen in Deutschland bestmöglich zu adressieren, führen wir gerade eine kurze Umfrage durch. Diese dauert ca. 3-5 Minuten und hilft dabei, Maßnahmen zum Schutz von Netzlaufwerken und Cloudspeichern zu entwickeln.</p>
+          <p><a class="btn btn-secondary btn-lg text-uppercase" href="https://www.umfrageonline.com/s/sicherheit-unternehmensdaten" target="_blank">Zur Umfrage</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section>
-    <div class="container d-flex flex-column justify-content-center align-items-stretch py-5 vh-100">
+    <div class="container d-flex flex-column justify-content-center align-items-stretch py-5">
       <h2 class="text-center text-uppercase mb-4">Von <a href="https://skymatic.de" target="_blank">Skymatic</a>, den Machern von <a href="https://cryptomator.org" target="_blank">Cryptomator</a></h2>
       <img class="img-fluid mb-4" src="{{site.baseurl}}/assets/document-flow.png" srcset="{{site.baseurl}}/assets/document-flow@2x.png 2x" />
       <div class="row">
@@ -47,8 +59,7 @@ permalink: /
               <div class="card card-border-top shadow-sm">
                 <div class="card-body">
                   <h3 class="card-title">Ransomware-Schutz</h3>
-                  <p class="card-text">Intelligentes und selbstlernende Ransomware-Erkennung durch modernste Entropieanalysen. Dieser Schutz ist Filtern, die nach bestimmten Dateisignaturen und
--erweiterungen suchen deutlich überlegen.</p>
+                  <p class="card-text">Intelligentes und selbstlernende Ransomware-Erkennung durch modernste Entropieanalysen. Dieser Schutz ist Filtern, die nach bestimmten Dateisignaturen und -erweiterungen suchen deutlich überlegen.</p>
                 </div>
               </div>
             </div>
@@ -97,51 +108,51 @@ permalink: /
   </section>
 
   <section id="request-demo">
-    <div class="container py-5 vh-100">
+    <div class="container py-5">
       <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <h2 class="text-center text-uppercase mb-4">Demo anfordern</h2>
-        <form id="request-demo-form" action="https://api.cryptomator.org/server/demo-signup.php">
-          <div class="form-group">
-            <label for="request-demo-name">Name</label>
-            <input type="text" class="form-control" id="request-demo-name" required>
-          </div>
-          <div class="form-group">
-            <label for="request-demo-email">E-Mail-Adresse</label>
-            <input type="email" class="form-control" id="request-demo-email" required>
-          </div>
-          <div class="form-group">
-            <label for="request-demo-company">Unternehmen</label>
-            <input type="text" class="form-control" id="request-demo-company" required>
-          </div>
-          <div class="form-group">
-            <label for="request-demo-employees">Anzahl Mitarbeiter</label>
-            <select class="form-control" id="request-demo-employees" required>
-              <option value="self-employed">Selbstständig</option>
-              <option value="1-10" selected>1-10</option>
-              <option value="11-50">11-50</option>
-              <option value="51-200">51-200</option>
-              <option value="201-500">201-500</option>
-              <option value="501-1000">501-1000</option>
-              <option value="1001-5000">1001-5000</option>
-              <option value="5001-10000">5001-10.000</option>
-              <option value="10001+">10.001+</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="request-demo-usecase">Wie möchten Sie Cryptomator Server in Ihrem Unternehmen einsetzen?</label>
-            <textarea class="form-control" id="request-demo-usecase" rows="5" required></textarea>
-          </div>
-          <div class="form-group">
-            <small id="request-demo-consent" class="form-text text-muted">Mit dem Klick von &quot;Demo anfordern&quot; erklären Sie sich damit einverstanden, dass die oben eingegebenen Daten auf unseren Servern gespeichert werden und Sie von uns kontaktiert werden.</small>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-secondary btn-lg text-uppercase" aria-describedby="request-demo-consent">Demo anfordern</button>
-          </div>
-        </form>
-        <p id="request-demo-success" class="text-center d-none">Vielen Dank für Ihr Interesse an Cryptomator Server! :rocket: Wir melden uns bei Ihnen sobald wie möglich.</p>
-        <p id="request-demo-error" class="text-danger d-none">Beim Anfordern der Demo ist ein Fehler aufgetreten.</p>
-      </div>
+        <div class="col-lg-8 offset-lg-2">
+          <h2 class="text-center text-uppercase mb-4">Demo anfordern</h2>
+          <form id="request-demo-form" action="https://api.cryptomator.org/server/demo-signup.php">
+            <div class="form-group">
+              <label for="request-demo-name">Name</label>
+              <input type="text" class="form-control" id="request-demo-name" required>
+            </div>
+            <div class="form-group">
+              <label for="request-demo-email">E-Mail-Adresse</label>
+              <input type="email" class="form-control" id="request-demo-email" required>
+            </div>
+            <div class="form-group">
+              <label for="request-demo-company">Unternehmen</label>
+              <input type="text" class="form-control" id="request-demo-company" required>
+            </div>
+            <div class="form-group">
+              <label for="request-demo-employees">Anzahl Mitarbeiter</label>
+              <select class="form-control" id="request-demo-employees" required>
+                <option value="self-employed">Selbstständig</option>
+                <option value="1-10" selected>1-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-200">51-200</option>
+                <option value="201-500">201-500</option>
+                <option value="501-1000">501-1000</option>
+                <option value="1001-5000">1001-5000</option>
+                <option value="5001-10000">5001-10.000</option>
+                <option value="10001+">10.001+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="request-demo-usecase">Wie möchten Sie Cryptomator Server in Ihrem Unternehmen einsetzen?</label>
+              <textarea class="form-control" id="request-demo-usecase" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+              <small id="request-demo-consent" class="form-text text-muted">Mit dem Klick von &quot;Demo anfordern&quot; erklären Sie sich damit einverstanden, dass die oben eingegebenen Daten auf unseren Servern gespeichert werden und Sie von uns kontaktiert werden.</small>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary btn-lg text-uppercase" aria-describedby="request-demo-consent">Demo anfordern</button>
+            </div>
+          </form>
+          <p id="request-demo-success" class="text-center d-none">Vielen Dank für Ihr Interesse an Cryptomator Server! :rocket: Wir melden uns bei Ihnen sobald wie möglich.</p>
+          <p id="request-demo-error" class="text-danger d-none">Beim Anfordern der Demo ist ein Fehler aufgetreten.</p>
+        </div>
       </div>
     </div>
   </section>
