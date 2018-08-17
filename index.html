@@ -36,73 +36,66 @@ permalink: /
     <div class="container d-flex flex-column justify-content-center align-items-stretch py-5">
       <h2 class="text-center text-uppercase mb-4">Von <a href="https://skymatic.de" target="_blank">Skymatic</a>, den Machern von <a href="https://cryptomator.org" target="_blank">Cryptomator</a></h2>
       <img class="img-fluid mb-4" src="{{site.baseurl}}/assets/document-flow.png" srcset="{{site.baseurl}}/assets/document-flow@2x.png 2x" />
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="nav flex-column nav-pills mb-3" id="features-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="features-user-management-tab" data-toggle="pill" href="#features-user-management" role="tab" aria-controls="features-user-management" aria-selected="true">&#9312; Benutzerverwaltung</a>
-            <a class="nav-link" id="features-ransomware-protection-tab" data-toggle="pill" href="#features-ransomware-protection" role="tab" aria-controls="features-ransomware-protection" aria-selected="false">&#9313; Ransomware-Schutz</a>
-            <a class="nav-link" id="features-antivirus-scanning-tab" data-toggle="pill" href="#features-antivirus-scanning" role="tab" aria-controls="features-antivirus-scanning" aria-selected="false">&#9314; Antiviren-Scan</a>
-            <a class="nav-link" id="features-encryption-tab" data-toggle="pill" href="#features-encryption" role="tab" aria-controls="features-encryption" aria-selected="false">&#9315; Verschlüsselung</a>
-            <a class="nav-link" id="features-cloud-backup-tab" data-toggle="pill" href="#features-cloud-backup" role="tab" aria-controls="features-cloud-backup" aria-selected="false">&#9316; Cloud-Backup</a>
-            <a class="nav-link" id="features-more-tab" data-toggle="pill" href="#features-more" role="tab" aria-controls="features-more" aria-selected="false">Und mehr…</a>
+      <div class="card-deck">
+        <div class="card card-border-top shadow-sm mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Nutzerverwaltung</h3>
+            <ul class="card-text fa-ul ml-4">
+              <li class="mb-2"><span class="fa-li"><i class="far fa-check-circle"></i></span>Feingranulares Rechte- und Zugriffsmanagement</li>
+              <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Kompatibel mit Active-Directory / LDAP-Server</li>
+            </ul>
           </div>
         </div>
-        <div class="col-lg-9">
-          <div class="tab-content">
-            <div class="tab-pane fade show active" id="features-user-management" role="tabpanel" aria-labelledby="features-user-management-tab">
-              <div class="card card-border-top shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title">Benutzerverwaltung</h3>
-                  <p class="card-text">Feingranulares Rechte- und Zugriffsmanagement, über das auch temporäre und schreibgeschützte Zugriffe eingerichtet werden können. Nutzer und Gruppen können auch direkt von Ihrem Active-Directory oder LDAP-Server importiert werden.</p>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="features-ransomware-protection" role="tabpanel" aria-labelledby="features-ransomware-protection-tab">
-              <div class="card card-border-top shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title">Ransomware-Schutz</h3>
-                  <p class="card-text">Intelligentes und selbstlernende Ransomware-Erkennung durch modernste Entropieanalysen. Dieser Schutz ist Filtern, die nach bestimmten Dateisignaturen und -erweiterungen suchen deutlich überlegen.</p>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="features-antivirus-scanning" role="tabpanel" aria-labelledby="features-antivirus-scanning-tab">
-              <div class="card card-border-top shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title">Antiviren-Scan</h3>
-                  <p class="card-text">Dateien werden automatisch auf Viren gescannt, bevor sie in Ihrem Dateispeicher abgelegt werden. Malware wird effektiv an ihrer Verbreitung gehindert – durch ClamAV oder wahlweise durch einfache Einbindung Ihres existierenden Virenscanners.</p>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="features-encryption" role="tabpanel" aria-labelledby="features-encryption-tab">
-              <div class="card card-border-top shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title">Verschlüsselung</h3>
-                  <p class="card-text">Dateien werden zum Schutz vor unberechtigtem Zugriff mit AES-GCM (256 Bit) verschlüsselt. Die Verschlüsselung basiert auf der preisgekrönten Cryptomator-Technologie, erweitert um Recovery-Keys und Funktionen zum Teilen von Dateien.</p>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="features-cloud-backup" role="tabpanel" aria-labelledby="features-cloud-backup-tab">
-              <div class="card card-border-top shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title">Cloud-Backup</h3>
-                  <p class="card-text">Die verschlüsselten Dateien werden automatisch regelmäßig mit einer (hoch geo-redundanten) Cloud synchronisiert. So können Ihre Dateien sowie auch ältere Dateiversionen jederzeit wiederhergestellt werden.</p>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="features-more" role="tabpanel" aria-labelledby="features-more-tab">
-              <div class="card card-border-top shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title">Und mehr…</h3>
-                  <ul class="card-text">
-                    <li>Vollständige Audit-Logs</li>
-                    <li>Auf KI basierende automatische Account-Sperre bei verdächtigen Aktivitäten</li>
-                    <li>DSGVO-Compliance</li>
-                    <li>Enterprise-Support</li>
-                    <li>Kundenspezifische Anpassungsmöglichkeiten</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+        <div class="w-100 d-none d-sm-block d-md-none"></div>
+        <div class="card card-border-top shadow-sm mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Malware-Schutz</h3>
+            <ul class="card-text fa-ul ml-4">
+              <li class="mb-2"><span class="fa-li"><i class="far fa-check-circle"></i></span>Selbstlernende Ransomware-Erkennung durch Messung der Entropieänderung</li>
+              <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Automatischer Virenscan</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-100 d-none d-sm-block d-md-none"></div>
+        <div class="w-100 d-none d-md-block d-lg-none"></div>
+        <div class="card card-border-top shadow-sm mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Audit-Logs</h3>
+            <ul class="card-text fa-ul ml-4">
+              <li class="mb-2"><span class="fa-li"><i class="far fa-check-circle"></i></span>Nachvollziehbarkeit von Dateizugriffen</li>
+              <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Automatische Account-Sperrung bei verdächtigen Aktivitäten</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-100 d-none d-sm-block d-md-none"></div>
+        <div class="w-100 d-none d-lg-block"></div>
+        <div class="card card-border-top shadow-sm mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Verschlüsselung</h3>
+            <ul class="card-text fa-ul ml-4">
+              <li class="mb-2"><span class="fa-li"><i class="far fa-check-circle"></i></span>AES-GCM (256 Bit) Verschlüsselung vor Speicherung und Cloud-Synchronisation</li>
+              <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Basierend auf preisgekrönter und durch 1&amp;1 auditierter Cryptomator-Technologie</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-100 d-none d-sm-block d-md-none"></div>
+        <div class="w-100 d-none d-md-block d-lg-none"></div>
+        <div class="card card-border-top shadow-sm mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Cloud-Backup</h3>
+            <ul class="card-text fa-ul ml-4">
+              <li class="mb-2"><span class="fa-li"><i class="far fa-check-circle"></i></span>Automatische Synchronisation der verschlüsselten Dateien</li>
+              <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Einfache Wiederherstellung der Dateien und von Dateiversionen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-100 d-none d-sm-block d-md-none"></div>
+        <div class="card card-border-top shadow-sm mb-3">
+          <div class="card-body">
+            <h3 class="card-title">DSGVO-Konformität</h3>
+            <ul class="card-text fa-ul ml-4">
+              <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Hinreichender Schutz personenbezogener Daten durch Verschlüsselung und Rechtemanagement im Sinne der DSGVO</li>
+            </ul>
           </div>
         </div>
       </div>
