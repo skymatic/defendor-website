@@ -7,11 +7,12 @@ $('#request-demo-form').submit(function(event) {
 
   var url = $form.attr('action');
   $.post(url, {
+    language: $('#request-demo-language').val(),
     name: $('#request-demo-name').val(),
     email: $('#request-demo-email').val(),
     company: $('#request-demo-company').val(),
     employees: $('#request-demo-employees').val(),
-    usecase: '```markdown\n' + $('#request-demo-usecase').val() + '\n```'
+    usecase: $('#request-demo-usecase').val()
   })
   .done(function() {
     $form.addClass('d-none');
