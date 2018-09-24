@@ -1,0 +1,55 @@
+version: '3.4'
+
+services:
+  wildfly:
+    image: skymatic/defendor:0.3.1
+    environment:
+      - POSTGRES_USER=defendor
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=defendor
+    volumes:
+      - files:/files
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+    depends_on:
+      - postgres
+    stop_grace_period: 30s
+
+  postgres:
+    image: postgres:10.1-alpine
+    environment:
+      - POSTGRES_USER=defendor
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=defendor
+    volumes:
+      - database:/var/lib/postgresql/data
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 500M
+    stop_grace_period: 15s
+
+  tlsterminator:
+    image: skymatic/tls-terminator:1.0.0
+    environment:
+      - BACKEND_HOST=wildfly
+      - BACKEND_PORT=8080
+    depends_on:
+      - wildfly
+    ports:
+      - 443:443
+    #volumes:
+    #  - /path/to/certs/example.com.crt:/etc/nginx/cert.pem:ro
+    #  - /path/to/certs/example.com.key:/etc/nginx/key.pem:ro
+
+volumes:
+  database:
+    name: defendor-db
+  files:
+    name: defendor-files
