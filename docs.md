@@ -1,8 +1,10 @@
 ---
 layout: markdown
-title: Docs
+title: Dokumentation
 permalink: /docs/
 ---
+Cryptomator Server ist derzeit eine Beta-Software. Verwenden Sie diese Version nur zum Testen! Wenn Sie die Software selbst kennenlernen möchten, können Sie sie gerne auf Ihrem Server installieren. Bitte senden Sie Ihr Feedback an [server@cryptomator.org](mailto:server@cryptomator.org). Sie können [hier](/#request-demo) auch eine Demo anfordern.
+
 Mit :wrench: gekennzeichnete Bereiche stellen Einstellungen für erfahrenere Systemadministratoren dar.
 
 Mit :warning: werden Hinweise gekennzeichnet, die möglicherweise sicherheitsrelevant sind.
