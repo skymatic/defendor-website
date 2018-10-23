@@ -3,7 +3,7 @@ layout: en/markdown
 title: Documentation
 permalink: /en/docs/
 ---
-Cryptomator Server is currently beta software. Use this version for testing only! If you'd like to get to know the software for yourself, feel free to install it on your server. Please send your feedback to [server@cryptomator.org](mailto:server@cryptomator.org). You can also request a demo [here](/en/#request-demo).
+<p class="lead" markdown="1">Cryptomator Server is currently beta software. Use this version for testing only! If you'd like to get to know the software for yourself, feel free to install it on your server. Please send your feedback to [server@cryptomator.org](mailto:server@cryptomator.org).</p>
 
 :wrench: indicates advanced settings for experienced system administrators.
 
