@@ -2,7 +2,7 @@
   <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
     <a class="masthead-brand" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
     <nav class="nav nav-masthead justify-content-center">
-{% for item in site.data.menu %}
+{% for item in site.data.de/menu %}
   {% if page.url == item.url %}
       <a class="nav-link active" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }} <span class="sr-only">(current)</span></a>
   {% else %}
