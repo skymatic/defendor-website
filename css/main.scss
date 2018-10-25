@@ -8,6 +8,14 @@
  * Globals
  */
 
+html {
+  font-size: 14px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+  }
+}
+
 .section-dark {
   background-color: $dark;
   color: $white;
@@ -42,6 +50,10 @@
   box-shadow: $box-shadow;
   transform: translate(0, -1px);
   transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.card {
+  overflow: hidden;
 }
 
 .card-border-top {

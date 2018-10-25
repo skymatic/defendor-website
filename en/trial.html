@@ -1,0 +1,73 @@
+---
+layout: en/default
+title: Trial
+permalink: /en/trial/
+---
+<main role="main">
+  <div class="container my-5" id="form-container">
+    <h1>Trial</h1>
+    <p class="lead mb-5">Your license is bound to your <em>Installation ID</em>. If you don't have one yet, check out the <a href="/en/docs/">documentation</a> on how to install Cryptomator Server.</p>
+
+    <div class="card flex-md-row">
+      <div class="order-md-last text-white bg-primary p-5">
+        <h4 class="font-weight-normal mb-0">Trial</h4>
+        <h1 class="card-title">0 €</h1>
+        <h5 class="card-title font-weight-normal">30 Days</h2>
+
+        <hr class="border-white my-4">
+
+        <p class="card-text">Try out <em>Enterprise</em> plan without risk for free</p>
+        <p class="card-text">No credit card required</p>
+      </div>
+
+      <div class="order-md-first p-5">
+        <form id="trial-form" action="https://api.cryptomator.org/licenses/create.php">
+          <section>
+            <h5 class="mb-3">
+              <span class="fa-stack fa-sm text-primary mr-1"><i class="far fa-circle fa-stack-2x"></i><strong class="fa-stack-1x">1</strong></span>
+              <span class="align-middle">License Information</span>
+            </h5>
+
+            <div class="form-group">
+              <label for="installation-id">Installation ID</label>
+              <input type="text" class="form-control" id="installation-id" required>
+            </div>
+          </section>
+
+          <hr class="my-4">
+
+          <section>
+            <h5 class="mb-3">
+              <span class="fa-stack fa-sm text-primary mr-1"><i class="far fa-circle fa-stack-2x"></i><strong class="fa-stack-1x">2</strong></span>
+              <span class="align-middle">Basic Information</span>
+            </h5>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+          </section>
+
+          <hr class="my-4">
+
+          <section class="text-center">
+            <p id="error-message" class="text-danger d-none">An error has occurred while requesting your trial license.</p>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block mb-3">Try Now for Free</button>
+            <p class="small">By pressing "Try Now for Free", you confirm the license request for your given <em>Installation ID</em>. We will then contact with your license key and further details.</p>
+            <p class="small">Need any help? Don't hesitate to <a href="mailto:server@cryptomator.org">contact us</a>.</p>
+          </section>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5 d-none" id="success-container">
+    <h1>Trial</h1>
+    <p class="lead mb-5">:+1: Success! You will be redirected to your Cryptomator Server instance…</p>
+    <form id="success-redirect-form" method="post">
+      <label for="license-key">License Key</label>
+      <textarea class="form-control" id="license-key" name="jwt" aria-describedby="license-key-help" rows="5" readonly></textarea>
+      <small id="license-key-help" class="form-text text-muted">If the redirect doesn't work, enter this license key manually.</small>
+    </form>
+  </div>
+</main>

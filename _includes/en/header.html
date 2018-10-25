@@ -1,4 +1,4 @@
-<header class="section-dark text-center mb-auto py-3">
+<header class="section-dark text-center py-3">
   <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
     <a class="masthead-brand" href="{{ '/en' | prepend: site.baseurl }}">{{ site.title }}</a>
     <nav class="nav nav-masthead justify-content-center">
@@ -9,7 +9,7 @@
       <a class="nav-link" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }}</a>
   {% endif %}
 {% endfor %}
-      <a class="nav-link" href="{{ page.url | replace: '/en/', '/' | prepend: site.baseurl }}"><i class="fas fa-globe" aria-hidden="true"></i> Deutsch</a>
+      <a class="nav-link keep-location-search" href="{{ page.url | replace: '/en/', '/' | prepend: site.baseurl }}"><i class="fas fa-globe" aria-hidden="true"></i> DE</a>
     </nav>
   </div>
 </header>
