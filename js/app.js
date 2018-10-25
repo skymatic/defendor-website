@@ -27,8 +27,9 @@ $('#trial-form').submit(function(event) {
 
   var url = $form.attr('action');
   $.post(url, {
-    installationId: $('#installation-id').val(),
-    subject: $('#email').val()
+    installation_id: $('#installation-id').val(),
+    subject_email: $('#email').val(),
+    expiration_notification: $('#email-consent').is(':checked') ? 1 : 0
   })
   .done(function(data) {
     $('#license-key').val(data.jwt);
