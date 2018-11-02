@@ -1,12 +1,12 @@
 ---
 layout: de/default
-title: Trial
-permalink: /trial/
+title: Upgrade Trial
+permalink: /upgrade/trial/
 ---
 <main role="main">
   <div class="container my-5" id="form-container">
-    <h1>Trial</h1>
-    <p class="lead mb-5">Ihre Lizenz ist an Ihre <em>Installation ID</em> gebunden. Wenn Sie noch keine haben, lesen Sie die <a href="/docs/">Dokumentation</a> zur Installation von Cryptomator Server.</p>
+    <h1>Upgrade Trial</h1>
+    <p class="lead mb-5">Ihre Lizenz ist an Ihre <em>Installation ID</em> gebunden. Geben Sie Ihre aktuelle <em>License ID</em> an, um Ihre Lizenz zu aktualisieren.</p>
 
     <div class="card flex-md-row">
       <div class="order-md-last text-white bg-primary p-5">
@@ -16,12 +16,11 @@ permalink: /trial/
 
         <hr class="border-white my-4">
 
-        <p class="card-text"><em>Enterprise</em>-Plan ohne Risiko kostenlos testen</p>
-        <p class="card-text">Keine Kreditkarte erforderlich</p>
+        <p class="card-text">Verlängern Sie Ihre Trial während der Beta kostenlos</p>
       </div>
 
       <div class="order-md-first p-5">
-        <form id="trial-form">
+        <form id="upgrade-trial-form">
           <section>
             <h5 class="mb-3">
               <span class="fa-stack fa-sm text-primary mr-1"><i class="far fa-circle fa-stack-2x"></i><strong class="fa-stack-1x">1</strong></span>
@@ -31,6 +30,11 @@ permalink: /trial/
             <div class="form-group">
               <label for="installation-id">Installation ID</label>
               <input type="text" class="form-control" id="installation-id" required>
+            </div>
+
+            <div class="form-group">
+              <label for="license-id">License ID</label>
+              <input type="text" class="form-control" id="license-id" required>
             </div>
           </section>
 
@@ -57,8 +61,8 @@ permalink: /trial/
 
           <section class="text-center">
             <p id="error-message" class="text-danger d-none">Beim Anfordern Ihrer Trial-Lizenz ist ein Fehler aufgetreten.</p>
-            <button type="submit" class="btn btn-secondary btn-lg btn-block mb-3">Jetzt kostenlos testen</button>
-            <p class="small">Mit dem Klick von "Jetzt kostenlos testen" bestätigen Sie die Lizenzanfrage. Sie werden danach automatisch zu Ihrem Cryptomator Server weitergeleitet.</p>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block mb-3">Jetzt kostenlos upgraden</button>
+            <p class="small">Mit dem Klick von "Jetzt kostenlos upgraden" bestätigen Sie die Lizenzanfrage. Sie werden danach automatisch zu Ihrem Cryptomator Server weitergeleitet.</p>
             <p class="small">Haben Sie Fragen? Zögern Sie nicht, <a href="mailto:server@cryptomator.org">uns zu kontaktieren</a>.</p>
           </section>
         </form>
@@ -67,7 +71,7 @@ permalink: /trial/
   </div>
 
   <div class="container my-5 d-none" id="success-container">
-    <h1>Trial</h1>
+    <h1>Upgrade Trial</h1>
     <p class="lead mb-5">:+1: Erfolg! Sie werden zu Ihrer Instanz von Cryptomator Server weitergeleitet…</p>
     <form id="success-redirect-form" method="post">
       <label for="license-key">Lizenzschlüssel</label>
