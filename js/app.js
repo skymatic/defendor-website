@@ -7,27 +7,29 @@ $(document).ready(function () {
     $(this).prop('href', $(this).prop('href') + window.location.search);
   });
 
-  var $installationId = $('#installation-id');
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const $installationId = $('#installation-id');
   if ($installationId.length) {
-    var installationId = getUrlParameter('installation_id');
+    const installationId = urlParams.get('installation_id');
     if (installationId) {
       $installationId.val(installationId);
       $installationId.prop('readonly', true);
     }
   }
 
-  var $licenseId = $('#license-id');
+  const $licenseId = $('#license-id');
   if ($licenseId.length) {
-    var licenseId = getUrlParameter('license_id');
+    const licenseId = urlParams.get('license_id');
     if (licenseId) {
       $licenseId.val(licenseId);
       $licenseId.prop('readonly', true);
     }
   }
 
-  var $upgradeTrialForm = $('#upgrade-trial-form');
+  const $upgradeTrialForm = $('#upgrade-trial-form');
   if ($upgradeTrialForm.length && $installationId.length && $licenseId.length) {
-    var $email = $('#email');
+    const $email = $('#email');
     $email.prop('readonly', true);
     $.get('https://api.cryptomator.org/licenses/licenseinfo.php', {
       installation_id: $installationId.val(),
@@ -47,8 +49,8 @@ $(document).ready(function () {
 $('#trial-form').submit(function(event) {
   event.preventDefault();
 
-  var $form = $(this);
-  var $submitButton = $form.find('button[type=submit]');
+  const $form = $(this);
+  const $submitButton = $form.find('button[type=submit]');
   $submitButton.prop('disabled', true);
   $('#error-message').addClass('d-none');
 
@@ -62,9 +64,10 @@ $('#trial-form').submit(function(event) {
     $('#form-container').addClass('d-none');
     $('#success-container').removeClass('d-none');
 
-    var successUrl = getUrlParameter('success_url');
+    const urlParams = new URLSearchParams(window.location.search);
+    const successUrl = urlParams.get('success_url');
     if (successUrl) {
-      var $redirectForm = $('#success-redirect-form');
+      const $redirectForm = $('#success-redirect-form');
       $redirectForm.prop('action', successUrl);
       $redirectForm.submit();
     }
@@ -79,8 +82,8 @@ $('#trial-form').submit(function(event) {
 $('#upgrade-trial-form').submit(function(event) {
   event.preventDefault();
 
-  var $form = $(this);
-  var $submitButton = $form.find('button[type=submit]');
+  const $form = $(this);
+  const $submitButton = $form.find('button[type=submit]');
   $submitButton.prop('disabled', true);
   $('#error-message').addClass('d-none');
 
@@ -95,9 +98,10 @@ $('#upgrade-trial-form').submit(function(event) {
     $('#form-container').addClass('d-none');
     $('#success-container').removeClass('d-none');
 
-    var successUrl = getUrlParameter('success_url');
+    const urlParams = new URLSearchParams(window.location.search);
+    const successUrl = urlParams.get('success_url');
     if (successUrl) {
-      var $redirectForm = $('#success-redirect-form');
+      const $redirectForm = $('#success-redirect-form');
       $redirectForm.prop('action', successUrl);
       $redirectForm.submit();
     }
@@ -108,17 +112,3 @@ $('#upgrade-trial-form').submit(function(event) {
     $submitButton.prop('disabled', false);
   });
 });
-
-function getUrlParameter(param) {
-  var pageUrl = decodeURIComponent(window.location.search.substring(1));
-  var urlVariables = pageUrl.split('&');
-  var paramName;
-  var i;
-  for (i = 0; i < urlVariables.length; i++) {
-    paramName = urlVariables[i].split('=');
-    if (paramName[0] === param) {
-      return paramName[1] === undefined ? true : paramName[1];
-    }
-  }
-  return null;
-};
