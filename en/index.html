@@ -21,7 +21,7 @@ permalink: /en/
   </section>
 
   <section>
-    <div class="container d-flex flex-column justify-content-center align-items-stretch py-5 vh-100">
+    <div class="container d-flex flex-column justify-content-center align-items-stretch py-5">
       <h2 class="text-center text-uppercase mb-4">Best Protection for your Documents</h2>
       <img class="img-fluid mb-4" src="{{site.baseurl}}/assets/document-flow.png" srcset="{{site.baseurl}}/assets/document-flow@2x.png 2x" />
       <div class="card-deck">
@@ -85,6 +85,38 @@ permalink: /en/
               <li><span class="fa-li"><i class="far fa-check-circle"></i></span>Sufficient protection of personal data by means of encryption and rights management in accordance with GDPR</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="text-center mb-4">
+            <h2 class="text-uppercase">Let's Stay in Touch</h2>
+            <p class="lead">Subscribe to our mailing list or follow <a href="https://twitter.com/Cryptomator" target="_blank">@Cryptomator</a> on Twitter.</p>
+          </div>
+          <form id="newsletter-form">
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">Email Address</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-9 offset-sm-3">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9 offset-sm-3">
+                <p id="error-message" class="text-danger d-none">An error has occurred while subscribing to the newsletter.</p>
+              </div>
+            </div>
+          </form>
+          <p id="success-message" class="text-center d-none">Thank you for subscribing! :love_letter: A confirmation link has been sent to your email address.</p>
         </div>
       </div>
     </div>
