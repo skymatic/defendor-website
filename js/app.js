@@ -35,6 +35,8 @@ $(document).ready(function () {
 
   const $upgradeTrialForm = $('#upgrade-trial-form');
   if ($upgradeTrialForm.length && $installationId.length && $licenseId.length) {
+    const $submitButton = $upgradeTrialForm.find('button[type=submit]');
+    $submitButton.prop('disabled', true);
     const $email = $('#email');
     $email.prop('readonly', true);
     $.get('https://api.cryptomator.org/licenses/licenseinfo.php', {
@@ -44,10 +46,12 @@ $(document).ready(function () {
     .done(function(data) {
       $email.val(data.claims.sub);
       $email.prop('readonly', false);
+      $submitButton.prop('disabled', false);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
       console.error('Failed to get license info.', textStatus, errorThrown);
       $email.prop('readonly', false);
+      $submitButton.prop('disabled', false);
     });
   }
 });
