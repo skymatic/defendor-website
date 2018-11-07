@@ -9,6 +9,13 @@ Mit :wrench: gekennzeichnete Bereiche stellen Einstellungen für erfahrenere Sys
 
 Mit :warning: werden Hinweise gekennzeichnet, die möglicherweise sicherheitsrelevant sind.
 
+## Play with Docker
+Erstellen Sie eine Demo-Instanz von Cryptomator Server, indem Sie unten auf den Button "Try in PWD" klicken.
+
+[![Try in PWD](/assets/pwd-button.png)](http://play-with-docker.com?stack=https%3A%2F%2Fserver.cryptomator.org%2Fassets%2Fpwd-docker-compose.yml&stack_name=Cryptomator%20Server){:target="_blank"}{:rel="noopener"}
+
+Nachdem der Stack erfolgreich erstellt wurde, klicken Sie mit der rechten Maustaste oben auf den Port `8443` und kopieren Sie den Link. Fügen Sie den Link in den Browser ein, ersetzen Sie aber `http://` durch `https://`.
+
 ## Installation
 
 ### Systemvoraussetzungen
@@ -48,7 +55,7 @@ openssl pkcs12 -export -inkey serverKey.key -in serverCert.crt -out serverCert.p
 In `docker-compose.yml` müssen Sie
 
 1. den Wert für `HTTPS_P12_PASSWORD` auf das Passwort Ihrer `p12`-Datei setzen, die Sie per `openssl` zugewiesen haben und
-2. die entsprechende Zeile unter `volumes` auskommentieren und geben Sie den korrekten Pfad zu Ihrer `p12`-Datei an.
+2. die entsprechende Zeile unter `volumes` auskommentieren und den korrekten Pfad zu Ihrer `p12`-Datei angeben.
 
 ### Start des Servers
 Option A: Rufen Sie innerhalb des Ordners, in welchem sich die Datei `docker-compose.yml` befindet, den Befehl `docker-compose up` auf.

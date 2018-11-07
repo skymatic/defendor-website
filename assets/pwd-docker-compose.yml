@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  wildfly:
+    image: skymatic/defendor:0.4.0
+    environment:
+      - POSTGRES_USER=defendor
+      - POSTGRES_PASSWORD=notASecurePassword
+      - POSTGRES_DB=defendor
+      - SYSLOG_HOST=syslog
+      - SYSLOG_PORT=514
+    ports:
+      - 443:8443
+
+  postgres:
+    image: postgres:11.0-alpine
+    environment:
+      - POSTGRES_USER=defendor
+      - POSTGRES_PASSWORD=notASecurePassword
+      - POSTGRES_DB=defendor
+
+  syslog:
+    image: skymatic/syslog2pg:1
+    environment:
+      - POSTGRES_USER=defendor
+      - POSTGRES_PASSWORD=notASecurePassword
+      - POSTGRES_DB=defendor
