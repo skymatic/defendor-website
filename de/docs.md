@@ -12,9 +12,9 @@ Mit :warning: werden Hinweise gekennzeichnet, die möglicherweise sicherheitsrel
 ## Play with Docker
 Erstellen Sie eine Demo-Instanz von Cryptomator Server, indem Sie unten auf den Button "Try in PWD" klicken.
 
-[![Try in PWD](/assets/pwd/button.png)](http://play-with-docker.com?stack=https%3A%2F%2Fserver.cryptomator.org%2Fassets%2Fpwd%2Fdocker-compose.yml&stack_name=Cryptomator%20Server){:target="_blank"}{:rel="noopener"}
+[![Try in PWD](/assets/pwd/button.png)](http://play-with-docker.com/?stack=https%3A%2F%2Fserver.cryptomator.org%2Fassets%2Fpwd%2Fdocker-compose.yml&stack_name=cryptomator-server){:target="_blank"}{:rel="noopener"}
 
-Nachdem der Stack erfolgreich erstellt wurde, klicken Sie mit der rechten Maustaste oben auf den Port `8443` und kopieren Sie den Link. Fügen Sie den Link in den Browser ein, ersetzen Sie aber `http://` durch `https://`.
+Nachdem der Stack erfolgreich erstellt wurde, klicken Sie mit der rechten Maustaste oben auf den Port `443` und kopieren Sie den Link. Fügen Sie den Link in den Browser ein, ersetzen Sie aber `http://` durch `https://`.
 
 ## Installation
 
