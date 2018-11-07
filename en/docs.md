@@ -12,7 +12,7 @@ permalink: /en/docs/
 ## Play with Docker
 You can create a demo instance of Cryptomator Server by pressing the "Try in PWD" button below.
 
-[![Try in PWD](/assets/pwd-button.png)](http://play-with-docker.com?stack=https%3A%2F%2Fserver.cryptomator.org%2Fassets%2Fpwd-docker-compose.yml&stack_name=Cryptomator%20Server){:target="_blank"}{:rel="noopener"}
+[![Try in PWD](/assets/pwd/button.png)](http://play-with-docker.com?stack=https%3A%2F%2Fserver.cryptomator.org%2Fassets%2Fpwd%2Fdocker-compose.yml&stack_name=Cryptomator%20Server){:target="_blank"}{:rel="noopener"}
 
 After the stack has been successfully built, right-click the port `8443` at the top, and copy the link. Paste the link into the browser but replace `http://` with `https://`.
 
