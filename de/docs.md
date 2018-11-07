@@ -49,7 +49,11 @@ Laden Sie die Datei [`docker-compose.yml`](/assets/docker-compose.yml){:download
 Cryptomator Server benötigt Lesezugriff auf eine `PKCS #12` Datei, die Ihr SSL-Zertifikat und privaten Schlüssel enthält. Sie können `openssl` verwenden, um `pem`-kodierte Dateien in `p12` zu konvertieren.
 
 ```
-openssl pkcs12 -export -inkey serverKey.key -in serverCert.crt -out serverCert.p12
+openssl pkcs12 -export \
+  -inkey serverKey.key \
+  -in serverCert.crt \
+  -certfile intermediate.crt \
+  -out serverCert.p12
 ```
 
 In `docker-compose.yml` müssen Sie
