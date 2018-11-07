@@ -33,9 +33,22 @@ If you want to test the software on Windows, you first need Docker (see [https:/
 ### Configuration
 Download the file [`docker-compose.yml`](/assets/docker-compose.yml){:download="docker-compose.yml"}. Then edit `docker-compose.yml` to your needs.
 
-:warning: Especially the replacement of the value for `POSTGRES_PASSWORD` is highly recommended.
+:warning: It is highly recommended to replace the value for `POSTGRES_PASSWORD` by a generated password.
 
-:wrench: You can also specify the paths to your `pem`-encoded SSL certificate files for the `tlsterminator`. If you use your own TLS termination server, you can remove it and expose port `8080` of the `wildfly` service instead.
+## Setup TLS
+
+:warning: If you skip this step, Cryptomator Server will generate a self-signed certificate resulting in a corresponding warning in your browser.
+
+Cryptomator Server needs read access to a `PKCS #12` file containing your SSL certificate and private key. You can use `openssl` to convert `pem`-encoded files to `p12`.
+
+```
+openssl pkcs12 -export -inkey serverKey.key -in serverCert.crt -out serverCert.p12
+```
+
+In your `docker-compose.yml` file, you have to
+
+1. update the value for `HTTPS_P12_PASSWORD` to the password of your `p12` file that you have assigned using `openssl` and
+2. uncomment the appropriate line under `volumes` and specify the correct path to your `p12` file.
 
 ### Starting the Server
 Option A: Execute the command `docker-compose up` inside the folder in which the file `docker-compose.yml` is located.
@@ -47,15 +60,11 @@ Option A: Execute the command `docker-compose up` inside the folder in which the
 ### Open the Web Application
 Enter the hostname on which Cryptomator Server was installed into the browser. If you test the software on your local device, this would be e.g. `https://localhost`.
 
-:warning: If you have not set up a valid SSL certificate, a self-signed certificate will be generated, resulting in a corresponding warning in your browser.
-
 #### Browser Compatibility
 - current Chrome version, tested with version 69
 - current Firefox version, tested with version 62
 - current Edge version (limited), tested with version 17
 - current Safari version, tested with version 11.1
-
-Chrome: Note that the server must have a valid SSL certificate to guarantee that the server unlock and similar crypto operations work.
 
 Edge: Does not currently support crypto operations such as server unlock.
 
@@ -86,12 +95,14 @@ In the Web application, there is a menu on the left. Click on `Admin` to manage 
 ## Terminating the Server
 Terminate the software with `Ctrl+C` or by executing `docker-compose down` in a new console.
 
+## Uninstallation
 If you want to completely reset the software (delete all data), run `docker-compose down -v` (still possible after regular termination).
 
-## Uninstallation
 Uninstall Cryptomator Server by removing the image from Docker. Execute `docker rmi skymatic/defendor:X.Y.Z` to do this. For `X.Y.Z`, insert the actual version number.
 
 ## Troubleshooting
 
 ### Unresponsive Servers
 We noticed on some Linux servers entropy shortages leading to unresponsiveness. Try adding `- /dev/urandom:/dev/random:ro` to `volumes` of the `wildfly` service in the file `docker-compose.yml`.
+
+If even the entropy from the host system is not enough, you might have to install a random number generator to feed the linux random device like `haveged`.

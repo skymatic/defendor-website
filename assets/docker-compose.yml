@@ -2,13 +2,20 @@ version: '3.4'
 
 services:
   wildfly:
-    image: skymatic/defendor:0.3.1
+    image: skymatic/defendor:0.4.0
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=123456
       - POSTGRES_DB=defendor
+      - SYSLOG_HOST=syslog
+      - SYSLOG_PORT=514
+      - HTTPS_P12_PASSWORD=serverCertP12Passphrase
+    ports:
+      - 443:8443
     volumes:
-      - files:/files
+      - files:/defendor/files
+      - backups:/defendor/backups
+#      - /path/to/certs/dev-cert.p12:/wildfly/serverCert.p12:ro
     deploy:
       resources:
         limits:
@@ -19,7 +26,7 @@ services:
     stop_grace_period: 30s
 
   postgres:
-    image: postgres:10.1-alpine
+    image: postgres:11.0-alpine
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=123456
@@ -35,21 +42,18 @@ services:
           memory: 500M
     stop_grace_period: 15s
 
-  tlsterminator:
-    image: skymatic/tls-terminator:1.0.0
+  syslog:
+    image: skymatic/syslog2pg:1
     environment:
-      - BACKEND_HOST=wildfly
-      - BACKEND_PORT=8080
-    depends_on:
-      - wildfly
-    ports:
-      - 443:443
-    #volumes:
-    #  - /path/to/certs/example.com.crt:/etc/nginx/cert.pem:ro
-    #  - /path/to/certs/example.com.key:/etc/nginx/key.pem:ro
+      - POSTGRES_USER=defendor
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=defendor
+    stop_grace_period: 15s
 
 volumes:
   database:
     name: defendor-db
   files:
     name: defendor-files
+  backups:
+    name: defendor-backups

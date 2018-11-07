@@ -33,9 +33,22 @@ Wenn Sie die Software auf Windows testen wollen, benötigen Sie zunächst einmal
 ### Konfiguration
 Laden Sie die Datei [`docker-compose.yml`](/assets/docker-compose.yml){:download="docker-compose.yml"} herunter. Anschließend bearbeiten Sie `docker-compose.yml` nach Belieben.
 
-:warning: Insbesondere der Austausch des Wertes für `POSTGRES_PASSWORD` wird dringend empfohlen.
+:warning: Es wird dringend empfohlen, den Wert für `POSTGRES_PASSWORD` durch ein generiertes Passwort zu ersetzen.
 
-:wrench: Des Weiteren haben Sie die Möglichkeit, die Pfade zu Ihren `pem`-kodierten SSL-Zertifikatsdateien für den `tlsterminator` anzugeben. Falls Sie einen eigenen TLS-Terminierungsserver nutzen, können Sie selbigen entfernen und stattdessen den Port `8080` des `wildfly`-Services exposen.
+## TLS einrichten
+
+:warning: Wenn Sie diesen Schritt überspringen, generiert Cryptomator Server ein selbstsigniertes Zertifikat, was zu einer entsprechenden Warnung in Ihrem Browser führt.
+
+Cryptomator Server benötigt Lesezugriff auf eine `PKCS #12` Datei, die Ihr SSL-Zertifikat und privaten Schlüssel enthält. Sie können `openssl` verwenden, um `pem`-kodierte Dateien in `p12` zu konvertieren.
+
+```
+openssl pkcs12 -export -inkey serverKey.key -in serverCert.crt -out serverCert.p12
+```
+
+In `docker-compose.yml` müssen Sie
+
+1. den Wert für `HTTPS_P12_PASSWORD` auf das Passwort Ihrer `p12`-Datei setzen, die Sie per `openssl` zugewiesen haben und
+2. die entsprechende Zeile unter `volumes` auskommentieren und geben Sie den korrekten Pfad zu Ihrer `p12`-Datei an.
 
 ### Start des Servers
 Option A: Rufen Sie innerhalb des Ordners, in welchem sich die Datei `docker-compose.yml` befindet, den Befehl `docker-compose up` auf.
@@ -47,15 +60,11 @@ Option A: Rufen Sie innerhalb des Ordners, in welchem sich die Datei `docker-com
 ### Aufruf der Web-Anwendung
 Geben Sie den Hostnamen, auf dem Cryptomator Server installiert wurde, in den Browser ein. Falls Sie die Software auf Ihrem lokalen Gerät testen, wäre dies z.B. `https://localhost`.
 
-:warning: Falls Sie kein gültiges SSL-Zertifikat eingerichtet haben, wird ein selbstsigniertes Zertifikat erzeugt, was zu einer entsprechenden Warnung in Ihrem Browser führt.
-
 #### Browser-Kompatibilität
 - aktuelle Chrome-Version, getestet mit Version 69
 - aktuelle Firefox-Version, getestet mit Version 62
 - aktuelle Edge-Version (eingeschränkt), getestet mit Version 17
 - aktuelle Safari-Version, getestet mit Version 11.1
-
-Bei Chrome ist zu beachten, dass der Server ein gültiges SSL-Zertifikat haben muss, damit der Server-Unlock und ähnliche Crypto-Operationen funktionieren.
 
 Bei Edge sind Crypto-Operationen wie Server-Unlock zurzeit nicht möglich.
 
@@ -86,12 +95,14 @@ In der Web-Anwendung gibt es links ein Menü. Dort klicken Sie auf `Admin`, um E
 ## Beenden des Servers
 Sie beenden die Software durch `Strg+C` oder indem Sie in einer neuen Konsole `docker-compose down` ausführen.
 
+## Deinstallation
 Falls Sie die Software komplett zurücksetzen wollen (Löschen aller Daten), führen Sie `docker-compose down -v` aus (auch nach dem regulären Beenden noch möglich).
 
-## Deinstallation
 Sie deinstallieren Cryptomator Server, indem Sie das Image aus Docker entfernen. Führen Sie `docker rmi skymatic/defendor:X.Y.Z` aus, um dies zu tun. Setzen Sie für `X.Y.Z` die tatsächliche Versionsnummer ein.
 
 ## Troubleshooting
 
 ### Nicht reagierende Server
 Wir haben auf einigen Linux-Servern Entropie-Engpässe festgestellt, die zu mangelnder Reaktionsfähigkeit führten. Versuchen Sie, `- /dev/urandom:/dev/random:ro` zu `volumes` des `wildfly`-Services in der Datei `docker-compose.yml` hinzuzufügen.
+
+Wenn auch die Entropie des Hostsystems nicht ausreicht, müssen Sie möglicherweise einen Zufallszahlengenerator für das Linux-Random-Device wie `haveged` installieren.
