@@ -42,7 +42,7 @@ Laden Sie die Datei [`docker-compose.yml`](/assets/docker-compose.yml){:download
 
 :warning: Es wird dringend empfohlen, den Wert für `POSTGRES_PASSWORD` durch ein generiertes Passwort zu ersetzen.
 
-## TLS einrichten
+#### TLS einrichten
 
 :warning: Wenn Sie diesen Schritt überspringen, generiert Cryptomator Server ein selbstsigniertes Zertifikat, was zu einer entsprechenden Warnung in Ihrem Browser führt.
 

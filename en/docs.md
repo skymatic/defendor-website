@@ -42,7 +42,7 @@ Download the file [`docker-compose.yml`](/assets/docker-compose.yml){:download="
 
 :warning: It is highly recommended to replace the value for `POSTGRES_PASSWORD` by a generated password.
 
-## Setup TLS
+#### Setup TLS
 
 :warning: If you skip this step, Cryptomator Server will generate a self-signed certificate resulting in a corresponding warning in your browser.
 
