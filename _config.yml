@@ -6,9 +6,19 @@ description: >
 # Plugins
 plugins:
   - jemoji
+  - jekyll-redirect-from
 
 # Build settings
 sass:
   style: compressed
 emoji:
   src: "/assets"
+
+# Collections
+collections:
+  docs_de:
+    output: true
+    permalink: /docs/:title/
+  docs_en:
+    output: true
+    permalink: /en/docs/:title/

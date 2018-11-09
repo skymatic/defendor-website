@@ -1,10 +1,15 @@
-<header class="section-dark text-center py-3">
-  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
+<header class="section-dark sticky-top text-center py-3">
+  <div class="container-fluid d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
     <a class="masthead-brand" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
     <nav class="nav nav-masthead justify-content-center">
+{% if page.url == "/" %}
+      <a class="nav-link active" href="{{ '/' | prepend: site.baseurl }}">Home <span class="sr-only">(aktuell)</span></a>
+{% else %}
+      <a class="nav-link" href="{{ '/' | prepend: site.baseurl }}">Home</a>
+{% endif %}
 {% for item in site.data.de/menu %}
-  {% if page.url == item.url %}
-      <a class="nav-link active" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }} <span class="sr-only">(current)</span></a>
+  {% if page.url contains item.url %}
+      <a class="nav-link active" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }} <span class="sr-only">(aktuell)</span></a>
   {% else %}
       <a class="nav-link" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }}</a>
   {% endif %}

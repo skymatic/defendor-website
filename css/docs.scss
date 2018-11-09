@@ -1,0 +1,79 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+@import "custom-variables";
+@import "functions";
+@import "variables";
+@import "mixins";
+
+h2 {
+  margin-top: 3rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+}
+
+h2:before,
+h3:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 0;
+  height: 122px;
+  margin-top: -122px;
+}
+
+.sidebar {
+  box-shadow: inset -1px 0 0 $gray-200;
+  height: calc(100vh - 74px);
+  overflow-x: hidden;
+  overflow-y: auto; /* scrollable contents if viewport is shorter than content */
+  padding: 0;
+  z-index: 100; /* behind the navbar */
+
+  @include media-breakpoint-down(md) {
+    height: calc(100vh - 64px);
+  }
+}
+
+.sidebar .nav-link {
+  color: $body-color;
+  font-weight: 500;
+  padding: $spacer * .75 $grid-gutter-width / 2;
+}
+
+.sidebar .nav-link.active {
+  border-left: $border-width * 4 solid $primary;
+  padding-left: $grid-gutter-width / 2 - $border-width * 4;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: $gray-200;
+}
+
+.toc {
+  box-shadow: inset 1px 0 0 $gray-200;
+  height: calc(100vh - 74px - 6rem);
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* scrollable contents if viewport is shorter than content */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  z-index: 100; /* behind the navbar */
+}
+
+.toc a {
+  color: $text-muted;
+  display: block;
+  padding-bottom: .125rem;
+  padding-top: .125rem;
+}
+
+.toc a:hover {
+  color: $link-color;
+  text-decoration: none;
+}

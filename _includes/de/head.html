@@ -8,6 +8,9 @@
   <meta name="author" content="Skymatic">
 
   <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+{% for stylesheet in page.stylesheets %}
+  <link rel="stylesheet" href="{{ stylesheet | prepend: site.baseurl }}">
+{% endfor %}
   <link rel="stylesheet" href="{{ '/css/fontawesome-all.css' | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace: 'index.html','' | prepend: site.baseurl }}">
   <link rel="alternate" hreflang="en" href="{{ page.url | replace: 'index.html', '' | prepend: '/en' | prepend: site.baseurl }}">
