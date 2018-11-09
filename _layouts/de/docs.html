@@ -4,18 +4,23 @@ layout: de/no-footer
 {% assign sortedDocuments = site.docs_de | sort: 'path', 'last' %}
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light position-fixed sidebar">
-      <ul class="nav flex-column">
+    <nav class="col-md-2 navbar-expand-md navbar-light bg-light sidebar">
+      <button class="navbar-toggler m-2" type="button" data-toggle="collapse" data-target="#sidebar-collapse" aria-controls="sidebar-collapse" aria-expanded="false" aria-label="Seitennavigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse sidebar-collapse" id="sidebar-collapse">
+        <ul class="nav flex-column w-100">
 {% for document in sortedDocuments %}
-        <li>
+          <li>
   {% if page.url == document.url %}
-          <a class="nav-link active" href="{{ document.url }}">{{ document.title }} <span class="sr-only">(aktuell)</span></a>
+            <a class="nav-link active" href="{{ document.url }}">{{ document.title }} <span class="sr-only">(aktuell)</span></a>
   {% else %}
-          <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
+            <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
   {% endif %}
-        </li>
+          </li>
 {% endfor %}
-      </ul>
+        </ul>
+      </div>
     </nav>
     <main role="main" class="col-md-10 col-lg-8 offset-md-2">
       <div class="container-fluid px-5 my-5">
@@ -24,7 +29,7 @@ layout: de/no-footer
       </div>
     </main>
 {% if page.items %}
-    <div class="col-lg-2 offset-lg-10 d-none d-lg-block position-fixed toc">
+    <div class="col-lg-2 offset-lg-10 d-none d-lg-block toc">
       <ul class="list-unstyled mb-0">
   {% for item in page.items %}
         <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
