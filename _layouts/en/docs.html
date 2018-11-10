@@ -28,15 +28,15 @@ layout: en/no-footer
         {{ content }}
       </div>
     </main>
-{% if page.items %}
+{% if page.tocH2 %}
     <div class="col-lg-2 offset-lg-10 d-none d-lg-block toc">
       <ul class="list-unstyled mb-0">
-  {% for item in page.items %}
-        <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
-    {% if item.items %}
+  {% for tocH2Entry in page.tocH2 %}
+        <li><a href="#{{ tocH2Entry.id }}">{{ tocH2Entry.title }}</a></li>
+    {% if tocH2Entry.tocH3 %}
         <ul class="list-unstyled pl-3 mb-0">
-      {% for item2 in item.items %}
-          <li><a href="#{{ item2.id }}">{{ item2.title }}</a></li>
+      {% for tocH3Entry in tocH2Entry.tocH3 %}
+          <li><a href="#{{ tocH3Entry.id }}">{{ tocH3Entry.title }}</a></li>
       {% endfor %}
         </ul>
     {% endif %}

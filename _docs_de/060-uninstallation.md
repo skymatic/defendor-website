@@ -3,6 +3,7 @@ layout: de/docs
 title: Deinstallation
 slug: uninstallation
 stylesheets: ['/css/docs.css']
+javascripts: ['/js/anchor.min.js', '/js/docs.js']
 ---
 Falls Sie die Software komplett zurücksetzen wollen (Löschen aller Daten), führen Sie `docker-compose down -v` aus (auch nach dem regulären Beenden noch möglich).
 

@@ -3,8 +3,9 @@ layout: de/docs
 title: Troubleshooting
 slug: troubleshooting
 stylesheets: ['/css/docs.css']
+javascripts: ['/js/anchor.min.js', '/js/docs.js']
 
-items:
+tocH2:
   - title: Server reagiert nicht
     id: unresponsive-server
 ---

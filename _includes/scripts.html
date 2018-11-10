@@ -1,3 +1,6 @@
 <script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/bootstrap.bundle.min.js' | prepend: site.baseurl }}"></script>
+{% for javascript in page.javascripts %}
+<script src="{{ javascript | prepend: site.baseurl }}"></script>
+{% endfor %}
 <script src="{{ '/js/app.js' | prepend: site.baseurl }}"></script>

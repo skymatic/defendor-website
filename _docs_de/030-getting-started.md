@@ -3,18 +3,19 @@ layout: de/docs
 title: Inbetriebnahme
 slug: getting-started
 stylesheets: ['/css/docs.css']
+javascripts: ['/js/anchor.min.js', '/js/docs.js']
 
-items:
+tocH2:
   - title: Aufruf der Web-Anwendung
     id: open-the-web-application
-    items:
+    tocH3:
       - title: Browser-Kompatibilität
       - id: browser-compatibility
   - title: Initiales Setup
     id: initial-setup
   - title: Administration
     id: administration
-    items:
+    tocH3:
     - title: Anbindung eines Directory-Servers
       id: connecting-a-directory-server
     - title: Einrichten von Workspaces

@@ -3,13 +3,14 @@ layout: en/docs
 title: Installation
 slug: installation
 stylesheets: ['/css/docs.css']
+javascripts: ['/js/anchor.min.js', '/js/docs.js']
 
-items:
+tocH2:
   - title: System Requirements
     id: system-requirements
   - title: Configuration
     id: configuration
-    items:
+    tocH3:
     - title: Setup TLS
       id: setup-tls
   - title: Starting the Server

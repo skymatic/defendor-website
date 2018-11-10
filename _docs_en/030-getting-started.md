@@ -3,18 +3,19 @@ layout: en/docs
 title: Getting Started
 slug: getting-started
 stylesheets: ['/css/docs.css']
+javascripts: ['/js/anchor.min.js', '/js/docs.js']
 
-items:
+tocH2:
   - title: Open the Web Application
     id: open-the-web-application
-    items:
+    tocH3:
       - title: Browser Compatibility
       - id: browser-compatibility
   - title: Initial Setup
     id: initial-setup
   - title: Administration
     id: administration
-    items:
+    tocH3:
     - title: Connecting a Directory Server
       id: connecting-a-directory-server
     - title: Setting up Workspaces

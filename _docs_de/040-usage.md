@@ -3,8 +3,9 @@ layout: de/docs
 title: Nutzung
 slug: usage
 stylesheets: ['/css/docs.css']
+javascripts: ['/js/anchor.min.js', '/js/docs.js']
 
-items:
+tocH2:
   - title: Zugriff auf Workspaces
     id: accessing-workspaces
 ---
