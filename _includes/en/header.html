@@ -8,7 +8,7 @@
       <a class="nav-link" href="{{ '/en/' | prepend: site.baseurl }}">Home</a>
 {% endif %}
 {% for item in site.data.en/menu %}
-  {% if page.url contains item.url %}
+  {% if page.url contains item.url or page.url contains item.activeUrl %}
       <a class="nav-link active" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }} <span class="sr-only">(current)</span></a>
   {% else %}
       <a class="nav-link" href="{{ item.url | prepend: site.baseurl }}">{{ item.text }}</a>
