@@ -1,50 +1,46 @@
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-});
+$('[data-toggle="tooltip"]').tooltip()
 
-$(document).ready(function () {
-  const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 
-  const $installationId = $('#installation-id');
-  if ($installationId.length) {
-    const installationId = urlParams.get('installation_id');
-    if (installationId) {
-      $installationId.val(installationId);
-      $installationId.prop('readonly', true);
-    }
+const $installationId = $('#installation-id');
+if ($installationId.length) {
+  const installationId = urlParams.get('installation_id');
+  if (installationId) {
+    $installationId.val(installationId);
+    $installationId.prop('readonly', true);
   }
+}
 
-  const $licenseId = $('#license-id');
-  if ($licenseId.length) {
-    const licenseId = urlParams.get('license_id');
-    if (licenseId) {
-      $licenseId.val(licenseId);
-      $licenseId.prop('readonly', true);
-    }
+const $licenseId = $('#license-id');
+if ($licenseId.length) {
+  const licenseId = urlParams.get('license_id');
+  if (licenseId) {
+    $licenseId.val(licenseId);
+    $licenseId.prop('readonly', true);
   }
+}
 
-  const $upgradeTrialForm = $('#upgrade-trial-form');
-  if ($upgradeTrialForm.length && $installationId.length && $licenseId.length) {
-    const $submitButton = $upgradeTrialForm.find('button[type=submit]');
-    $submitButton.prop('disabled', true);
-    const $email = $('#email');
-    $email.prop('readonly', true);
-    $.get('https://api.cryptomator.org/licenses/licenseinfo.php', {
-      installation_id: $installationId.val(),
-      license_id: $licenseId.val()
-    })
-    .done(function(data) {
-      $email.val(data.claims.sub);
-      $email.prop('readonly', false);
-      $submitButton.prop('disabled', false);
-    })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-      console.error('Failed to get license info.', textStatus, errorThrown);
-      $email.prop('readonly', false);
-      $submitButton.prop('disabled', false);
-    });
-  }
-});
+const $upgradeTrialForm = $('#upgrade-trial-form');
+if ($upgradeTrialForm.length && $installationId.length && $licenseId.length) {
+  const $submitButton = $upgradeTrialForm.find('button[type=submit]');
+  $submitButton.prop('disabled', true);
+  const $email = $('#email');
+  $email.prop('readonly', true);
+  $.get('https://api.cryptomator.org/licenses/licenseinfo.php', {
+    installation_id: $installationId.val(),
+    license_id: $licenseId.val()
+  })
+  .done(function(data) {
+    $email.val(data.claims.sub);
+    $email.prop('readonly', false);
+    $submitButton.prop('disabled', false);
+  })
+  .fail(function(jqXHR, textStatus, errorThrown) {
+    console.error('Failed to get license info.', textStatus, errorThrown);
+    $email.prop('readonly', false);
+    $submitButton.prop('disabled', false);
+  });
+}
 
 $('#trial-form').submit(function(event) {
   event.preventDefault();
