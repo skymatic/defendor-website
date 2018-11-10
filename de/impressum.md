@@ -2,6 +2,7 @@
 layout: de/markdown
 title: Impressum
 permalink: /impressum/
+noindex: true
 ---
 ## Angaben gemäß § 5 TMG:
 Skymatic UG (haftungsbeschränkt)<br/>
