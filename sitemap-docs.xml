@@ -1,0 +1,23 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% assign sortedDocumentsDe = site.docs_de | sort: 'path', 'last' %}
+{% assign sortedDocumentsEn = site.docs_en | sort: 'path', 'last' %}
+{% for documentDe in sortedDocumentsDe %}
+  {% assign documentEn = sortedDocumentsEn[forloop.index0] %}<!-- {{ documentEn.title | xml_escape }} -->
+  <url>
+    <loc>{{ site.url }}{{ documentDe.url }}</loc>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ documentEn.url }}" />
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}{{ documentDe.url }}" />
+  </url>
+  <url>
+    <loc>{{ site.url }}{{ documentEn.url }}</loc>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}{{ documentDe.url }}" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ documentEn.url }}" />
+  </url>
+{% endfor %}
+</urlset>
