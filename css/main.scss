@@ -16,6 +16,13 @@ html {
   }
 }
 
+pre {
+  background-color: $light;
+  border-radius: $border-radius;
+  color: $body-color;
+  padding: $spacer * .75;
+}
+
 .section-dark {
   background-color: $dark;
   color: $white;
