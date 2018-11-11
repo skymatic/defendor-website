@@ -23,9 +23,7 @@ tocH2:
 * 1 GB HDD zzgl. Speicherplatz für Ihre Daten
 * Docker
 
-Wir empfehlen, Cryptomator Server auf Linux-Servern zu betreiben. Die Software funktioniert aber auch auf allen Plattformen, die von Docker unterstützt werden. 
-
-Wenn Sie die Software auf Windows testen wollen, benötigen Sie zunächst einmal Docker (siehe [https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/){:target="_blank"}{:rel="noopener"}).
+Wir empfehlen, Cryptomator Server auf Linux-Servern zu betreiben. Die Software funktioniert aber auch auf allen Plattformen (u.a. [Windows](https://docs.docker.com/docker-for-windows/){:target="_blank"}{:rel="noopener"} und [macOS](https://docs.docker.com/docker-for-mac/){:target="_blank"}{:rel="noopener"}), die von Docker unterstützt werden. 
 
 **Mindestanforderungen zum Starten der Container**
 - wildfly: 500 MB
@@ -36,9 +34,11 @@ Wenn Sie die Software auf Windows testen wollen, benötigen Sie zunächst einmal
 - postgres: 500 MB
 
 ## Konfiguration {#configuration}
-Laden Sie die Datei [`docker-compose.yml`](/assets/docker-compose.yml){:download="docker-compose.yml"} herunter. Anschließend bearbeiten Sie `docker-compose.yml` nach Belieben.
+Laden Sie die Datei `docker-compose.yml` herunter und bearbeiten Sie diese anschließend nach Belieben.
 
 :warning: Es wird dringend empfohlen, den Wert für `POSTGRES_PASSWORD` durch ein generiertes Passwort zu ersetzen.
+
+<a class="btn btn-outline-primary" href="/assets/docker-compose.yml" download="docker-compose.yml">Download</a><small class="text-muted ml-2">v{{ site.version }}</small>
 
 ### TLS einrichten {#setup-tls}
 :warning: Wenn Sie diesen Schritt überspringen, generiert Cryptomator Server ein selbstsigniertes Zertifikat, was zu einer entsprechenden Warnung in Ihrem Browser führt.

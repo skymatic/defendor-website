@@ -23,9 +23,7 @@ tocH2:
 * 1 GB HDD plus storage for your data
 * Docker
 
-We recommend running Cryptomator Server on Linux servers. However, the software also works on all platforms supported by Docker. 
-
-If you want to test the software on Windows, you first need Docker (see [https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/){:target="_blank"}{:rel="noopener"}).
+We recommend running Cryptomator Server on Linux servers. However, the software also works on all platforms supported by Docker (like [Windows](https://docs.docker.com/docker-for-windows/){:target="_blank"}{:rel="noopener"} and [macOS](https://docs.docker.com/docker-for-mac/){:target="_blank"}{:rel="noopener"}). 
 
 **Minimum Requirements for Starting Containers**
 - wildfly: 500 MB
@@ -36,9 +34,11 @@ If you want to test the software on Windows, you first need Docker (see [https:/
 - postgres: 500 MB
 
 ## Configuration {#configuration}
-Download the file [`docker-compose.yml`](/assets/docker-compose.yml){:download="docker-compose.yml"}. Then edit `docker-compose.yml` to your needs.
+Download the file `docker-compose.yml` and edit it to your needs.
 
 :warning: It is highly recommended to replace the value for `POSTGRES_PASSWORD` by a generated password.
+
+<a class="btn btn-outline-primary" href="/assets/docker-compose.yml" download="docker-compose.yml">Download</a><small class="text-muted ml-2">v{{ site.version }}</small>
 
 ### Setup TLS {#setup-tls}
 :warning: If you skip this step, Cryptomator Server will generate a self-signed certificate resulting in a corresponding warning in your browser.
