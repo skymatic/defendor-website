@@ -10,15 +10,15 @@ tocH2:
     id: unresponsive-server
 ---
 ## Unresponsive Server {#unresponsive-server}
-We noticed on some Linux servers entropy shortages leading to unresponsiveness. Add the following to `volumes` of the `wildfly` service in the file `docker-compose.yml` to use the entropy from the host system:
+We noticed on some Linux servers entropy shortages leading to unresponsiveness. To use the entropy from the host system, add `/dev/urandom:/dev/random:ro` to `volumes` of the `wildfly` service in the file `docker-compose.yml`:
 
 ```
 services:
   wildfly:
-   ...
-   volumes:
-     ...
-     - /dev/urandom:/dev/random:ro
+    ...
+    volumes:
+      ...
+      - /dev/urandom:/dev/random:ro
 ```
 
 If even the entropy from the host system is not enough, you might have to install a random number generator to feed the linux random device like `haveged`.
