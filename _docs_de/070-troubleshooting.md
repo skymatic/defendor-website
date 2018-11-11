@@ -12,7 +12,7 @@ tocH2:
 ## Server reagiert nicht {#unresponsive-server}
 Wir haben auf einigen Linux-Servern Entropie-Engpässe festgestellt, die zu mangelnder Reaktionsfähigkeit führten. Um die Entropie des Hostsystems zu nutzen, fügen Sie `/dev/urandom:/dev/random:ro` zu `volumes` des `wildfly`-Services in der Datei `docker-compose.yml` hinzu:
 
-```
+```yaml
 services:
   wildfly:
     ...

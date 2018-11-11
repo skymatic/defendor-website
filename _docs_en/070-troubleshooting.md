@@ -12,7 +12,7 @@ tocH2:
 ## Unresponsive Server {#unresponsive-server}
 We noticed on some Linux servers entropy shortages leading to unresponsiveness. To use the entropy from the host system, add `/dev/urandom:/dev/random:ro` to `volumes` of the `wildfly` service in the file `docker-compose.yml`:
 
-```
+```yaml
 services:
   wildfly:
     ...
