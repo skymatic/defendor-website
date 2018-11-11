@@ -43,7 +43,7 @@ Laden Sie die Datei `docker-compose.yml` herunter und bearbeiten Sie diese ansch
 ### TLS einrichten {#setup-tls}
 :warning: Wenn Sie diesen Schritt überspringen, generiert Cryptomator Server ein selbstsigniertes Zertifikat, was zu einer entsprechenden Warnung in Ihrem Browser führt.
 
-Cryptomator Server benötigt Lesezugriff auf eine `PKCS #12` Datei, die Ihr SSL-Zertifikat und privaten Schlüssel enthält. Sie können `openssl` verwenden, um `pem`-kodierte Dateien in `p12` zu konvertieren.
+Cryptomator Server benötigt Lesezugriff auf eine `PKCS #12`-Datei, die Ihr SSL-Zertifikat und privaten Schlüssel enthält. Sie können `openssl` verwenden, um `pem`-kodierte Dateien in `p12` zu konvertieren.
 
 ```
 openssl pkcs12 -export \
