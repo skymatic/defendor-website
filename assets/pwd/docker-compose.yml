@@ -20,7 +20,7 @@ services:
       - POSTGRES_DB=defendor
 
   syslog:
-    image: skymatic/syslog2pg:1
+    image: skymatic/syslog2pg:3
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=notASecurePassword

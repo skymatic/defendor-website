@@ -43,7 +43,7 @@ services:
     stop_grace_period: 15s
 
   syslog:
-    image: skymatic/syslog2pg:1
+    image: skymatic/syslog2pg:3
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=123456
