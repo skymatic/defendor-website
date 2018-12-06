@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   wildfly:
-    image: skymatic/defendor:0.4.1
+    image: skymatic/defendor:0.5.0
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=123456
@@ -43,7 +43,7 @@ services:
     stop_grace_period: 15s
 
   syslog:
-    image: skymatic/syslog2pg:3
+    image: skymatic/syslog2pg:4
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=123456
