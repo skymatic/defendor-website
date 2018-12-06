@@ -8,7 +8,7 @@ services:
       - POSTGRES_PASSWORD=notASecurePassword
       - POSTGRES_DB=defendor
       - SYSLOG_HOST=syslog
-      - SYSLOG_PORT=514
+      - SYSLOG_PORT=10514
     ports:
       - 443:8443
 
