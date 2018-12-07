@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   wildfly:
-    image: skymatic/defendor:0.5.0
+    image: skymatic/defendor:0.5.1
     environment:
       - POSTGRES_USER=defendor
       - POSTGRES_PASSWORD=notASecurePassword
