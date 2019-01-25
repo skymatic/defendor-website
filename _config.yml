@@ -2,7 +2,7 @@
 title: Cryptomator Server
 description: >
   Cryptomator Server is the new heart of your IT infrastructure. The platform stores your company files and makes them available via network drives. Data is securely protected against ransomware, viruses, data theft, unauthorized access, and data loss.
-version: 0.5.2
+version: 0.6.0
 
 # Plugins
 plugins:
