@@ -2,47 +2,45 @@
 layout: en/no-footer
 ---
 {% assign sortedDocuments = site.docs_en | sort: 'path', 'last' %}
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-md-2 navbar-expand-md navbar-light bg-light sidebar">
-      <button class="navbar-toggler m-2" type="button" data-toggle="collapse" data-target="#sidebar-collapse" aria-controls="sidebar-collapse" aria-expanded="false" aria-label="Toggle sidebar navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse sidebar-collapse" id="sidebar-collapse">
-        <ul class="nav flex-column w-100">
+<nav class="sidebar navbar-expand-md navbar-light bg-light">
+  <button class="navbar-toggler m-2" type="button" data-toggle="collapse" data-target="#sidebar-collapse" aria-controls="sidebar-collapse" aria-expanded="false" aria-label="Toggle sidebar navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse sidebar-collapse" id="sidebar-collapse">
+    <ul class="nav flex-column w-100">
 {% for document in sortedDocuments %}
-          <li>
+      <li>
   {% if page.url == document.url %}
-            <a class="nav-link active" href="{{ document.url }}">{{ document.title }} <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="{{ document.url }}">{{ document.title }} <span class="sr-only">(current)</span></a>
   {% else %}
-            <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
+        <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
   {% endif %}
-          </li>
+      </li>
 {% endfor %}
-        </ul>
-      </div>
-    </nav>
-    <main role="main" class="col-md-10 col-lg-8 offset-md-2 px-0">
-      <div class="container-fluid px-md-5 my-5">
-        <h1>{{ page.title }}</h1>
-        {{ content }}
-      </div>
-    </main>
+    </ul>
+  </div>
+</nav>
+
+<main role="main" class="main">
+  <div class="container-fluid px-md-5 my-3 my-md-5">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+  </div>
+</main>
+
 {% if page.tocH2 %}
-    <div class="col-lg-2 offset-lg-10 d-none d-lg-block toc">
-      <ul class="list-unstyled mb-0">
+<div class="toc d-none d-xl-block">
+  <ul class="list-unstyled mb-0">
   {% for tocH2Entry in page.tocH2 %}
-        <li><a href="#{{ tocH2Entry.id }}">{{ tocH2Entry.title }}</a></li>
+    <li><a href="#{{ tocH2Entry.id }}">{{ tocH2Entry.title }}</a></li>
     {% if tocH2Entry.tocH3 %}
-        <ul class="list-unstyled pl-3 mb-0">
+    <ul class="list-unstyled pl-3 mb-0">
       {% for tocH3Entry in tocH2Entry.tocH3 %}
-          <li><a href="#{{ tocH3Entry.id }}">{{ tocH3Entry.title }}</a></li>
+      <li><a href="#{{ tocH3Entry.id }}">{{ tocH3Entry.title }}</a></li>
       {% endfor %}
-        </ul>
+    </ul>
     {% endif %}
   {% endfor %}
-      </ul>
-    </div>
-{% endif %}
-  </div>
+  </ul>
 </div>
+{% endif %}

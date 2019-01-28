@@ -53,11 +53,14 @@ h6, {
     box-shadow: inset -1px 0 0 $gray-200;
     height: calc(100vh - 64px);
     position: fixed;
+    top: 64px;
+    width: 220px;
   }
 
   @include media-breakpoint-up(lg) {
     height: calc(100vh - 74px);
-  }  
+    top: 74px;
+  }
 }
 
 .sidebar-collapse {
@@ -82,6 +85,16 @@ h6, {
   background-color: $gray-200;
 }
 
+.main {
+  @include media-breakpoint-up(md) {
+    margin-left: 220px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-right: 320px;
+  }
+}
+
 .toc {
   box-shadow: inset 1px 0 0 $gray-200;
   height: calc(100vh - 74px - 6rem);
@@ -89,9 +102,12 @@ h6, {
   margin-top: 3rem;
   overflow-x: hidden;
   overflow-y: auto; /* scrollable contents if viewport is shorter than content */
+  right: 0;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   position: fixed;
+  top: 74px;
+  width: 320px;
   z-index: 100; /* behind the navbar */
 }
 
