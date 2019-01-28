@@ -3,7 +3,7 @@ layout: de/docs
 title: Deinstallation
 slug: uninstallation
 stylesheets: ['/css/docs.css']
-javascripts: ['/js/anchor.min.js', '/js/docs.js']
+javascripts: ['/js/clipboard.min.js', '/js/anchor.min.js', '/js/docs.js']
 ---
 Falls Sie die Software komplett zurücksetzen wollen (Löschen aller Daten), führen Sie
 

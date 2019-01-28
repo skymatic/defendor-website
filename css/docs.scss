@@ -37,6 +37,33 @@ h6, {
   }
 }
 
+.clipboard {
+  display: none;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  > .btn {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    z-index: 10;
+
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, ($font-size-base * .75), $btn-line-height-sm, $btn-border-radius-sm);
+  }
+}
+
+.btn-clipboard {
+  color: $gray-600;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
 .anchorjs-link:hover {
   text-decoration: none;
 }

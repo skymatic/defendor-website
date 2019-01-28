@@ -3,7 +3,7 @@ layout: en/docs
 title: Introduction
 slug: introduction
 stylesheets: ['/css/docs.css']
-javascripts: ['/js/anchor.min.js', '/js/docs.js']
+javascripts: ['/js/clipboard.min.js', '/js/anchor.min.js', '/js/docs.js']
 
 tocH2:
   - title: Quickstart

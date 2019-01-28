@@ -3,7 +3,7 @@ layout: de/docs
 title: Inbetriebnahme
 slug: getting-started
 stylesheets: ['/css/docs.css']
-javascripts: ['/js/anchor.min.js', '/js/docs.js']
+javascripts: ['/js/clipboard.min.js', '/js/anchor.min.js', '/js/docs.js']
 
 tocH2:
   - title: Aufruf der Web-Anwendung
