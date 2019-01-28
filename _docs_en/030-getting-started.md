@@ -16,10 +16,10 @@ tocH2:
   - title: Administration
     id: administration
     tocH3:
-    - title: Connecting a Directory Server
-      id: connecting-a-directory-server
     - title: Setting up Workspaces
       id: setting-up-workspaces
+    - title: Connecting a Directory Server
+      id: connecting-a-directory-server
 ---
 ## Open the Web Application {#open-the-web-application}
 Enter the hostname on which Cryptomator Server was installed into the browser. If you test the software on your local device, this would be e.g. `https://localhost`.
@@ -40,11 +40,11 @@ Edge: Does not currently support crypto operations such as server unlock.
 ## Administration {#administration}
 In the Web application, there is a menu on the left. Click on `Admin` to manage settings.
 
-### Connecting a Directory Server {#connecting-a-directory-server}
-1. Click on `LDAP` in the administration menu, activate it, and enter the data for the connection to the directory server.
-2. Check if the import of the users/groups was successful by clicking on `Users`/`Groups` in the menu on the left.
-
 ### Setting up Workspaces {#setting-up-workspaces}
 1. Click on `Workspaces` in the administration menu.
 2. Create a workspace and assign a name of your choice.
 3. Assign those users or user groups which should have access to this workspace.
+
+### Connecting a Directory Server {#connecting-a-directory-server}
+1. Click on `LDAP` in the administration menu, activate it, and enter the data for the connection to the directory server.
+2. Check if the import of the users/groups was successful by clicking on `Users`/`Groups` in the menu on the left.
