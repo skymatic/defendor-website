@@ -1,5 +1,3 @@
-$('[data-toggle="tooltip"]').tooltip()
-
 const urlParams = new URLSearchParams(window.location.search);
 
 const $installationId = $('#installation-id');
@@ -26,7 +24,7 @@ if ($upgradeTrialForm.length && $installationId.length && $licenseId.length) {
   $submitButton.prop('disabled', true);
   const $email = $('#email');
   $email.prop('readonly', true);
-  $.get('https://api.cryptomator.org/licenses/licenseinfo.php', {
+  $.get('https://api.cryptomator.org/licenses/info.php', {
     installation_id: $installationId.val(),
     license_id: $licenseId.val()
   })
@@ -58,12 +56,12 @@ $('#trial-form').submit(function(event) {
   .done(function(data) {
     $('#license-key').val(data.jwt);
     $('#form-container').addClass('d-none');
-    $('#success-container').removeClass('d-none');
+    $('#redirect-container').removeClass('d-none');
 
     const urlParams = new URLSearchParams(window.location.search);
     const successUrl = urlParams.get('success_url');
     if (successUrl) {
-      const $redirectForm = $('#success-redirect-form');
+      const $redirectForm = $('#redirect-form');
       $redirectForm.prop('action', successUrl);
       $redirectForm.submit();
     }
@@ -92,12 +90,12 @@ $('#upgrade-trial-form').submit(function(event) {
   .done(function(data) {
     $('#license-key').val(data.jwt);
     $('#form-container').addClass('d-none');
-    $('#success-container').removeClass('d-none');
+    $('#redirect-container').removeClass('d-none');
 
     const urlParams = new URLSearchParams(window.location.search);
     const successUrl = urlParams.get('success_url');
     if (successUrl) {
-      const $redirectForm = $('#success-redirect-form');
+      const $redirectForm = $('#redirect-form');
       $redirectForm.prop('action', successUrl);
       $redirectForm.submit();
     }

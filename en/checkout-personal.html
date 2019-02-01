@@ -1,8 +1,8 @@
 ---
 layout: en/default
-title: Trial
-permalink: /en/trial/
-javascripts: ['/js/trial.js']
+title: Checkout Personal
+permalink: /en/checkout/personal/
+javascripts: ['https://cdn.paddle.com/paddle/paddle.js', '/js/checkout.js']
 ---
 <main role="main" class="content-min-height">
   <div class="container my-5" id="form-container">
@@ -11,16 +11,18 @@ javascripts: ['/js/trial.js']
 
     <div class="card flex-md-row">
       <div class="order-md-last text-white bg-primary p-5">
-        <h4 class="font-weight-normal mb-0">Trial</h4>
-        <h1 class="card-title">0 €</h1>
-        <h5 class="card-title font-weight-normal">30 Days</h5>
+        <h4 class="font-weight-normal mb-0">Personal</h4>
+        <h1 class="card-title mb-0">2 € <small>/ mo</small></h1>
+        <p class="card-text"><small>(annual license)</small></p>
+        <h5 class="card-title font-weight-normal">Single User</h5>
         <hr class="border-white my-4">
-        <p class="card-text">Try out <em>Enterprise</em> plan without risk for free</p>
-        <p class="card-text">No credit card required</p>
+        <ul class="card-text list-unstyled">
+          <li>Unlimited workspaces</li>
+        </ul>
       </div>
 
       <div class="order-md-first flex-fill p-5">
-        <form id="trial-form">
+        <form id="checkout-form">
           <section>
             <h5 class="mb-3">
               <span class="fa-stack fa-sm text-primary mr-1"><i class="far fa-circle fa-stack-2x"></i><strong class="fa-stack-1x">1</strong></span>
@@ -56,8 +58,7 @@ javascripts: ['/js/trial.js']
 
           <section class="text-center">
             <p id="error-message" class="text-danger d-none">An error has occurred while requesting your license.</p>
-            <button type="submit" class="btn btn-secondary btn-lg btn-block mb-3">Try Now for Free</button>
-            <p class="small">By pressing "Try Now for Free", you confirm the license request. You will then be automatically redirected to your Cryptomator Server.</p>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block mb-3">Checkout</button>
             <p class="small">Need any help? Don't hesitate to <a href="mailto:server@cryptomator.org">contact us</a>.</p>
           </section>
         </form>
@@ -65,8 +66,14 @@ javascripts: ['/js/trial.js']
     </div>
   </div>
 
+  <div class="container my-5 d-none" id="success-container">
+    <h1>Lizenz</h1>
+    <p class="lead mb-5">:+1: Success! Retrieving your license key…</p>
+    <small class="text-muted">If the retrieval doesn't work, check your emails and enter the license key manually. If you encounter any issues, please <a href="mailto:server@cryptomator.org">contact us</a>.</small>
+  </div>
+
   <div class="container my-5 d-none" id="redirect-container">
-    <h1>License</h1>
+    <h1>Lizenz</h1>
     <p class="lead mb-5">:+1: Success! You will be redirected to your Cryptomator Server instance…</p>
     <form id="redirect-form" method="post">
       <label for="license-key">License Key</label>
