@@ -1,7 +1,7 @@
 ---
 layout: de/default
-title: Checkout Personal
-permalink: /checkout/personal/
+title: Checkout Team
+permalink: /checkout/team/
 javascripts: ['https://cdn.paddle.com/paddle/paddle.js', '/js/checkout.js']
 ---
 <main role="main" class="content-min-height">
@@ -11,13 +11,14 @@ javascripts: ['https://cdn.paddle.com/paddle/paddle.js', '/js/checkout.js']
 
     <div class="card flex-md-row">
       <div class="order-md-last text-white bg-primary p-5">
-        <h4 class="font-weight-normal mb-0">Personal</h4>
-        <h1 class="card-title mb-0">2 € <small>/ mo</small></h1>
+        <h4 class="font-weight-normal mb-0">Team</h4>
+        <h1 class="card-title mb-0">4 € <small>/ mo</small></h1>
         <p class="card-text"><small>(Jahreslizenz)</small></p>
-        <h5 class="card-title font-weight-normal">Einzelbenutzer</h5>
+        <h5 class="card-title font-weight-normal">Pro Benutzer</h5>
         <hr class="border-white my-4">
         <ul class="card-text list-unstyled">
           <li>Unbegrenzte Workspaces</li>
+          <li>Team-Management</li>
         </ul>
       </div>
 
@@ -32,6 +33,11 @@ javascripts: ['https://cdn.paddle.com/paddle/paddle.js', '/js/checkout.js']
             <div class="form-group">
               <label for="installation-id">Installation ID</label>
               <input type="text" class="form-control" id="installation-id" required>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Anzahl an Benutzern</label>
+              <input type="number" class="form-control" id="quantity" value="1" required>
             </div>
           </section>
 
@@ -57,9 +63,8 @@ javascripts: ['https://cdn.paddle.com/paddle/paddle.js', '/js/checkout.js']
           <hr class="my-4">
 
           <section class="text-center">
-            <input type="hidden" id="product-id" value="551022">
-            <input type="hidden" id="quantity" value="1">
-            <input type="hidden" id="allow-quantity" value="false">
+            <input type="hidden" id="product-id" value="551353">
+            <input type="hidden" id="allow-quantity" value="true">
 
             <p id="error-message" class="text-danger d-none">Beim Anfordern Ihrer Lizenz ist ein Fehler aufgetreten.</p>
             <button type="submit" class="btn btn-secondary btn-lg btn-block mb-3">Zum Bezahlvorgang</button>

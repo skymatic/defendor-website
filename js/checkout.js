@@ -24,9 +24,11 @@ $('#checkout-form').submit(function(event) {
   event.preventDefault();
 
   Paddle.Checkout.open({
-    product: 551022,
+    product: $('#product-id').val(),
     email: $('#email').val(),
     marketingConsent: false,
+    quantity: $('#quantity').val(),
+    allowQuantity: $('#allow-quantity').val(),
     passthrough: JSON.stringify({
       installation_id: $('#installation-id').val(),
       expiration_notification: $('#email-consent').is(':checked') ? 1 : 0
