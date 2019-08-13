@@ -24,7 +24,7 @@ if ($upgradeTrialForm.length && $installationId.length && $licenseId.length) {
   $submitButton.prop('disabled', true);
   const $email = $('#email');
   $email.prop('readonly', true);
-  $.get('https://api.cryptomator.org/licenses/server/info.php', {
+  $.get('https://api.cryptomator.org/server/license-info.php', {
     installation_id: $installationId.val(),
     license_id: $licenseId.val()
   })
@@ -48,7 +48,7 @@ $('#trial-form').submit(function(event) {
   $submitButton.prop('disabled', true);
   $('#error-message').addClass('d-none');
 
-  $.post('https://api.cryptomator.org/licenses/server/create.php', {
+  $.post('https://api.cryptomator.org/server/license-create.php', {
     installation_id: $('#installation-id').val(),
     subject_email: $('#email').val(),
     expiration_notification: $('#email-consent').is(':checked') ? 1 : 0
@@ -81,7 +81,7 @@ $('#upgrade-trial-form').submit(function(event) {
   $submitButton.prop('disabled', true);
   $('#error-message').addClass('d-none');
 
-  $.post('https://api.cryptomator.org/licenses/server/upgrade.php', {
+  $.post('https://api.cryptomator.org/server/license-upgrade.php', {
     installation_id: $('#installation-id').val(),
     license_id: $('#license-id').val(),
     subject_email: $('#email').val(),
